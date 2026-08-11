@@ -38,10 +38,19 @@
   .sec-desc{color:var(--muted);font-size:14px;margin-bottom:28px}
 
   /* ---------- route strip ---------- */
-  .route{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-  .route .stop{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:14px;letter-spacing:.04em;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-  .route .stop.hl{border-color:var(--gold);background:#fdf6e3;color:var(--maroon);font-weight:600}
-  .route .arr{color:var(--gold);font-weight:700}
+  .routemap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .routemap svg{display:block;width:100%;height:auto;min-width:640px}
+  .routemap .lbl{font-size:15px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:4px;letter-spacing:.02em}
+  .routemap .elv{font-size:11px;font-weight:500;fill:var(--muted);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:3px}
+  .routemap .num{font-size:10px;font-weight:700;fill:#fff;text-anchor:middle}
+  .routemap .drive{fill:none;stroke:var(--maroon);stroke-width:3;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2000;stroke-dashoffset:2000;transition:stroke-dashoffset 2.6s ease .3s}
+  .reveal.on .drive{stroke-dashoffset:0}
+  .routemap .flight{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:7 7;opacity:0;transition:opacity .9s ease 1.6s}
+  .reveal.on .flight{opacity:.85}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:12px;font-size:12.5px;color:var(--muted);letter-spacing:.03em}
+  .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+  .legend .ln{display:inline-block;width:22px;border-top:3px solid var(--maroon);border-radius:2px;margin-right:6px;vertical-align:3px}
+  .legend .ln.dash{border-top:2px dashed var(--sky)}
 
   /* ---------- tips ---------- */
   .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
@@ -132,24 +141,50 @@
   <div class="wrap">
     <div class="sec-title"><span class="no">ROUTE</span><h2 class="serif">路线总览</h2></div>
     <p class="sec-desc">先飞林芝适应海拔，再由低到高深入藏北，最后经纳木措直抵机场，节奏循序渐进。</p>
-    <div class="route">
-      <span class="stop">杭州</span><span class="arr">→</span>
-      <span class="stop">成都</span><span class="arr">→</span>
-      <span class="stop">林芝 · 米林 2800m</span><span class="arr">→</span>
-      <span class="stop hl">雅鲁藏布江峡谷</span><span class="arr">→</span>
-      <span class="stop hl">南迦巴瓦峰</span><span class="arr">→</span>
-      <span class="stop">拉萨 3650m</span><span class="arr">→</span>
-      <span class="stop hl">羊湖 4441m</span><span class="arr">→</span>
-      <span class="stop hl">卡若拉冰川 5020m</span><span class="arr">→</span>
-      <span class="stop">日喀则 3850m</span><span class="arr">→</span>
-      <span class="stop hl">扎什伦布寺</span><span class="arr">→</span>
-      <span class="stop">班戈 4700m</span><span class="arr">→</span>
-      <span class="stop hl">色林措 4530m</span><span class="arr">→</span>
-      <span class="stop">当雄 4300m</span><span class="arr">→</span>
-      <span class="stop hl">纳木措 4718m</span><span class="arr">→</span>
-      <span class="stop">贡嘎机场</span><span class="arr">→</span>
-      <span class="stop">成都</span><span class="arr">→</span>
-      <span class="stop">杭州</span>
+    <div class="tblwrap">
+    <div class="routemap reveal">
+      <svg viewBox="0 0 1000 700" role="img" aria-label="西藏环线路线示意图：杭州、成都飞林芝，经拉萨、日喀则、藏北环线，最后经纳木措到贡嘎机场">
+        <rect x="0" y="0" width="1000" height="700" rx="18" fill="#eef2ea" stroke="#e4dccb"/>
+        <path d="M120,620 C180,540 300,560 360,620 S520,660 560,620" stroke="#dde7d9" fill="none" stroke-width="1.5"/>
+        <path d="M60,140 C140,80 260,90 320,150 S470,210 520,150" stroke="#dde7d9" fill="none" stroke-width="1.5"/>
+        <path d="M620,120 C700,70 820,80 880,140" stroke="#dde7d9" fill="none" stroke-width="1.5"/>
+        <path d="M700,360 l14,-22 l14,22 M737,352 l12,-18 l12,18 M150,545 l12,-18 l12,18" stroke="#c8d3c6" fill="none" stroke-width="2"/>
+        <ellipse cx="209" cy="126" rx="26" ry="9" fill="#c6dde0"/>
+        <ellipse cx="394" cy="270" rx="20" ry="8" fill="#c6dde0"/>
+        <ellipse cx="356" cy="508" rx="16" ry="7" fill="#c6dde0"/>
+        <g><circle cx="52" cy="64" r="16" fill="#fffdf7" stroke="#e4dccb"/><path d="M52,74 L52,56 M52,56 l-5,8 M52,56 l5,8" stroke="#8c2f24" stroke-width="2" fill="none"/><text x="52" y="98" class="elv" text-anchor="middle">N</text></g>
+        <text x="20" y="686" class="elv">示意图 · 非实际比例</text>
+
+        <path class="flight" d="M944,652 L858,596"/>
+        <path class="flight" d="M858,596 Q820,470 741,411"/>
+        <path class="flight" d="M388,460 Q640,610 858,596"/>
+        <path class="drive" d="M741,411 L807,415 L411,411 L362,495 L313,516 L181,464 L351,170 L209,110 L408,295 L388,257 L388,460"/>
+
+        <g>
+          <circle cx="944" cy="652" r="8" fill="#31619f" stroke="#fffdf7" stroke-width="2"/><text x="930" y="657" class="lbl" text-anchor="end">杭州</text>
+          <circle cx="858" cy="596" r="8" fill="#31619f" stroke="#fffdf7" stroke-width="2"/><text x="872" y="592" class="lbl">成都</text>
+
+          <circle cx="741" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="741" y="414.5" class="num">1</text><text x="727" y="398" class="lbl" text-anchor="end">林芝 · 米林</text><text x="727" y="414" class="elv" text-anchor="end">2800m</text>
+          <circle cx="807" cy="415" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="807" y="418.5" class="num">2</text><text x="821" y="404" class="lbl">雅鲁藏布江峡谷</text><text x="821" y="420" class="elv">南迦巴瓦 · 日照金山</text>
+          <circle cx="411" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="411" y="414.5" class="num">3</text><text x="397" y="398" class="lbl" text-anchor="end">拉萨</text><text x="397" y="414" class="elv" text-anchor="end">3650m</text>
+          <circle cx="362" cy="495" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="362" y="498.5" class="num">4</text><text x="348" y="488" class="lbl" text-anchor="end">羊湖</text><text x="348" y="504" class="elv" text-anchor="end">4441m</text>
+          <circle cx="313" cy="516" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="313" y="519.5" class="num">5</text><text x="313" y="545" class="lbl" text-anchor="middle">卡若拉冰川</text><text x="313" y="560" class="elv" text-anchor="middle">5020m</text>
+          <circle cx="181" cy="464" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="181" y="467.5" class="num">6</text><text x="167" y="452" class="lbl" text-anchor="end">日喀则 · 扎什伦布寺</text><text x="167" y="468" class="elv" text-anchor="end">3850m</text>
+          <circle cx="351" cy="170" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="351" y="173.5" class="num">7</text><text x="365" y="166" class="lbl">班戈</text><text x="365" y="182" class="elv">4700m</text>
+          <circle cx="209" cy="110" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="209" y="113.5" class="num">8</text><text x="223" y="104" class="lbl">色林措</text><text x="223" y="120" class="elv">4530m</text>
+          <circle cx="408" cy="295" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="408" y="298.5" class="num">9</text><text x="422" y="292" class="lbl">当雄</text><text x="422" y="308" class="elv">4300m</text>
+          <circle cx="388" cy="257" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="388" y="260.5" class="num">10</text><text x="374" y="246" class="lbl" text-anchor="end">纳木措</text><text x="374" y="262" class="elv" text-anchor="end">4718m</text>
+          <circle cx="388" cy="460" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="388" y="463.5" class="num">11</text><text x="402" y="474" class="lbl">贡嘎机场</text>
+        </g>
+      </svg>
+    </div>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:#8c2f24"></i>城市 / 住宿</span>
+      <span><i class="dot" style="background:#c9972c"></i>景点</span>
+      <span><i class="dot" style="background:#31619f"></i>往返枢纽</span>
+      <span><i class="ln"></i>车行路线（按日程 1→11）</span>
+      <span><i class="ln dash"></i>航段</span>
     </div>
   </div>
 </section>
