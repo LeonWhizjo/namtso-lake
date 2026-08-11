@@ -39,7 +39,7 @@
 
   /* ---------- route strip ---------- */
   .routemap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-  .routemap svg{display:block;width:100%;height:auto;min-width:640px}
+  .routemap svg{display:block;width:100%;height:auto}
   .routemap .lbl{font-size:15px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:4px;letter-spacing:.02em}
   .routemap .elv{font-size:11px;font-weight:500;fill:var(--muted);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:3px}
   .routemap .num{font-size:10px;font-weight:700;fill:#fff;text-anchor:middle}
@@ -119,6 +119,13 @@
     figure.two{grid-template-columns:1fr}
     figure.two .cell + .cell img{border-left:none;border-top:1px solid var(--line)}
     table{min-width:620px}
+    .routemap{padding:6px}
+    .routemap .lbl{font-size:26px;stroke-width:7px}
+    .routemap .elv{font-size:19px;stroke-width:5px}
+    .routemap .num{font-size:17px}
+    .routemap a.pt circle{r:13}
+    .routemap .drive{stroke-width:5}
+    .routemap .flight{stroke-width:3.5}
   }
 </style>
 </head>
@@ -143,17 +150,19 @@
   <div class="wrap">
     <div class="sec-title"><span class="no">ROUTE</span><h2 class="serif">路线总览</h2></div>
     <p class="sec-desc">先飞林芝适应海拔，再由低到高深入藏北，最后经纳木措直抵机场，节奏循序渐进。</p>
-    <div class="tblwrap">
     <div class="routemap reveal">
       <svg viewBox="0 0 1000 700" role="img" aria-label="西藏环线路线示意图：杭州、成都飞林芝，经拉萨、日喀则、藏北环线，最后经纳木措到贡嘎机场">
-        <rect x="0" y="0" width="1000" height="700" rx="18" fill="#eef2ea" stroke="#e4dccb"/>
-        <path d="M120,620 C180,540 300,560 360,620 S520,660 560,620" stroke="#dde7d9" fill="none" stroke-width="1.5"/>
-        <path d="M60,140 C140,80 260,90 320,150 S470,210 520,150" stroke="#dde7d9" fill="none" stroke-width="1.5"/>
-        <path d="M620,120 C700,70 820,80 880,140" stroke="#dde7d9" fill="none" stroke-width="1.5"/>
-        <path d="M700,360 l14,-22 l14,22 M737,352 l12,-18 l12,18 M150,545 l12,-18 l12,18" stroke="#c8d3c6" fill="none" stroke-width="2"/>
-        <ellipse cx="209" cy="126" rx="26" ry="9" fill="#c6dde0"/>
-        <ellipse cx="394" cy="270" rx="20" ry="8" fill="#c6dde0"/>
-        <ellipse cx="356" cy="508" rx="16" ry="7" fill="#c6dde0"/>
+        <rect x="0" y="0" width="1000" height="700" rx="18" fill="#e9f0dd" stroke="#d9cfb6"/>
+        <path d="M60,300 C160,215 340,195 470,255 C565,300 565,420 470,470 C340,540 160,520 90,440 C48,392 40,342 60,300 Z" fill="#dcead0"/>
+        <path d="M600,180 C720,118 880,140 940,220 C982,282 960,382 880,422 C780,470 660,440 610,360 C570,298 560,222 600,180 Z" fill="#dcead0"/>
+        <path d="M120,620 C180,540 300,560 360,620 S520,660 560,620" stroke="#b9cfae" fill="none" stroke-width="2"/>
+        <path d="M60,140 C140,80 260,90 320,150 S470,210 520,150" stroke="#b9cfae" fill="none" stroke-width="2"/>
+        <path d="M620,120 C700,70 820,80 880,140" stroke="#b9cfae" fill="none" stroke-width="2"/>
+        <path d="M640,560 C720,510 840,520 900,570" stroke="#b9cfae" fill="none" stroke-width="2"/>
+        <path d="M700,360 l14,-22 l14,22 M737,352 l12,-18 l12,18 M150,545 l12,-18 l12,18 M560,240 l13,-20 l13,20" stroke="#94b189" fill="none" stroke-width="2.5"/>
+        <ellipse cx="209" cy="126" rx="26" ry="9" fill="#a3cbd4"/>
+        <ellipse cx="394" cy="270" rx="20" ry="8" fill="#a3cbd4"/>
+        <ellipse cx="356" cy="508" rx="16" ry="7" fill="#a3cbd4"/>
         <g><circle cx="52" cy="64" r="16" fill="#fffdf7" stroke="#e4dccb"/><path d="M52,74 L52,56 M52,56 l-5,8 M52,56 l5,8" stroke="#8c2f24" stroke-width="2" fill="none"/><text x="52" y="98" class="elv" text-anchor="middle">N</text></g>
         <text x="20" y="686" class="elv">示意图 · 非实际比例</text>
 
@@ -167,11 +176,11 @@
           <a class="pt" href="https://uri.amap.com/search?keyword=成都&city=成都" target="_blank" rel="noopener"><circle cx="858" cy="596" r="8" fill="#31619f" stroke="#fffdf7" stroke-width="2"/><text x="872" y="592" class="lbl">成都</text></a>
 
           <a class="pt" href="https://uri.amap.com/search?keyword=米林&city=林芝" target="_blank" rel="noopener"><circle cx="741" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="741" y="414.5" class="num">1</text><text x="727" y="398" class="lbl" text-anchor="end">林芝 · 米林</text><text x="727" y="414" class="elv" text-anchor="end">2800m</text></a>
-          <a class="pt" href="https://uri.amap.com/search?keyword=雅鲁藏布大峡谷&city=林芝" target="_blank" rel="noopener"><circle cx="807" cy="415" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="807" y="418.5" class="num">2</text><text x="821" y="404" class="lbl">雅鲁藏布江峡谷</text><text x="821" y="420" class="elv">南迦巴瓦 · 日照金山</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=雅鲁藏布大峡谷&city=林芝" target="_blank" rel="noopener"><circle cx="807" cy="415" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="807" y="418.5" class="num">2</text><text x="815" y="404" class="lbl">雅鲁藏布江峡谷</text><text x="815" y="420" class="elv">南迦巴瓦峰</text></a>
           <a class="pt" href="https://uri.amap.com/search?keyword=拉萨&city=拉萨" target="_blank" rel="noopener"><circle cx="411" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="411" y="414.5" class="num">3</text><text x="397" y="398" class="lbl" text-anchor="end">拉萨</text><text x="397" y="414" class="elv" text-anchor="end">3650m</text></a>
           <a class="pt" href="https://uri.amap.com/search?keyword=羊卓雍措&city=山南" target="_blank" rel="noopener"><circle cx="362" cy="495" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="362" y="498.5" class="num">4</text><text x="348" y="488" class="lbl" text-anchor="end">羊湖</text><text x="348" y="504" class="elv" text-anchor="end">4441m</text></a>
           <a class="pt" href="https://uri.amap.com/search?keyword=卡若拉冰川&city=日喀则" target="_blank" rel="noopener"><circle cx="313" cy="516" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="313" y="519.5" class="num">5</text><text x="313" y="545" class="lbl" text-anchor="middle">卡若拉冰川</text><text x="313" y="560" class="elv" text-anchor="middle">5020m</text></a>
-          <a class="pt" href="https://uri.amap.com/search?keyword=扎什伦布寺&city=日喀则" target="_blank" rel="noopener"><circle cx="181" cy="464" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="181" y="467.5" class="num">6</text><text x="167" y="452" class="lbl" text-anchor="end">日喀则 · 扎什伦布寺</text><text x="167" y="468" class="elv" text-anchor="end">3850m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=扎什伦布寺&city=日喀则" target="_blank" rel="noopener"><circle cx="181" cy="464" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="181" y="467.5" class="num">6</text><text x="181" y="497" class="lbl" text-anchor="middle">日喀则 · 扎什伦布寺</text><text x="181" y="513" class="elv" text-anchor="middle">3850m</text></a>
           <a class="pt" href="https://uri.amap.com/search?keyword=班戈县&city=那曲" target="_blank" rel="noopener"><circle cx="351" cy="170" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="351" y="173.5" class="num">7</text><text x="365" y="166" class="lbl">班戈</text><text x="365" y="182" class="elv">4700m</text></a>
           <a class="pt" href="https://uri.amap.com/search?keyword=色林措&city=那曲" target="_blank" rel="noopener"><circle cx="209" cy="110" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="209" y="113.5" class="num">8</text><text x="223" y="104" class="lbl">色林措</text><text x="223" y="120" class="elv">4530m</text></a>
           <a class="pt" href="https://uri.amap.com/search?keyword=当雄&city=拉萨" target="_blank" rel="noopener"><circle cx="408" cy="295" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="408" y="298.5" class="num">9</text><text x="422" y="292" class="lbl">当雄</text><text x="422" y="308" class="elv">4300m</text></a>
@@ -179,7 +188,6 @@
           <a class="pt" href="https://uri.amap.com/search?keyword=拉萨贡嘎机场&city=拉萨" target="_blank" rel="noopener"><circle cx="388" cy="460" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="388" y="463.5" class="num">11</text><text x="402" y="474" class="lbl">贡嘎机场</text></a>
         </g>
       </svg>
-    </div>
     </div>
     <div class="legend">
       <span><i class="dot" style="background:#8c2f24"></i>城市 / 住宿</span>
