@@ -37,7 +37,7 @@ b{color:#3d3729}
   <p id="msg"></p>
   <a id="go" class="btn hide" href="javascript:;">打开飞常准小程序</a>
   <div id="copybox" class="hide"><div class="url" id="urllink"></div></div>
-  <div class="tip">手机浏览器经「飞常准」小程序查看；微信内与电脑端自动打开网页版航班动态</div>
+  <div class="tip">微信 / 电脑端自动打开携程航班动态(含值机柜台·登机口·行李转盘)；非微信手机浏览器经「飞常准」小程序查看</div>
 </div>
 <script>
 (function(){
@@ -50,6 +50,7 @@ b{color:#3d3729}
   var q = location.search.slice(1);
   var mpath = (function(){ var m = location.search.match(/[?&]path=([^&]*)/); return m ? decodeURIComponent(m[1]) : '/pages/detail/detail'; })();
   var fn = (function(){ var m = q.match(/fnum=([^&]*)/); return m ? decodeURIComponent(m[1]) : ''; })();
+  var dt = (function(){ var m = q.match(/date=([^&]*)/); return m ? decodeURIComponent(m[1]) : ''; })();
   if (fn) tt.textContent = '正在为你打开 ' + fn + ' 航班动态…';
 
   if (!isWx && isMob) {
@@ -74,13 +75,16 @@ b{color:#3d3729}
   }
 
   function webFallback(){
+    var ct = 'https://flights.ctrip.com/actualtime/detail?flightNo=' + encodeURIComponent(fn || '') + '&depDate=' + encodeURIComponent(dt || '');
     var bd = 'https://www.baidu.com/s?wd=' + encodeURIComponent((fn || '航班') + ' 航班动态');
     tt.textContent = '正在打开 ' + (fn || '') + ' 航班动态…';
-    msg.textContent = '微信 / 电脑端将自动打开网页版航班动态，无需任何额外操作。';
-    go.href = bd;
-    go.textContent = '立即查看航班动态';
+    msg.innerHTML = '网页版航班动态含<b>值机柜台、登机口、行李转盘</b>等信息。<br>若未自动跳转，请点击下方按钮。';
+    go.href = ct;
+    go.textContent = '打开携程航班动态';
     go.classList.remove('hide');
-    setTimeout(function(){ location.replace(bd); }, 500);
+    urllink.innerHTML = '备用：<a href="' + bd + '" style="color:#4a90e2">百度版航班动态</a>';
+    box.classList.remove('hide');
+    setTimeout(function(){ location.replace(ct); }, 500);
   }
 })();
 </script>
