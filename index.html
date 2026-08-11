@@ -73,7 +73,8 @@
   .tip{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:10px;padding:16px 18px}
   .tip.warn{border-left-color:var(--flag-red)}
   .tip.gold{border-left-color:var(--gold)}
-  .tip .tag{display:inline-block;font-size:12px;letter-spacing:.14em;font-weight:700;color:#fff;background:var(--teal);border-radius:4px;padding:2px 8px;margin-bottom:8px}
+  .tip .tag{display:inline-flex;align-items:center;gap:4px;font-size:12px;letter-spacing:.14em;font-weight:700;color:#fff;background:var(--teal);border-radius:4px;padding:2px 8px;margin-bottom:8px}
+  .tip .tag svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
   .tip.warn .tag{background:var(--flag-red)}
   .tip.gold .tag{background:var(--gold)}
   .tip p{font-size:14px}
@@ -256,16 +257,16 @@
     <div class="sec-title"><span class="no">NOTICE</span><h2 class="serif">行前必读</h2></div>
     <p class="sec-desc">表格「注意」栏精华汇总，出发前逐条打勾。</p>
     <div class="tips">
-      <div class="tip warn reveal"><span class="tag">证件</span><p><b>申请边防证</b>——羊湖、卡若拉、日喀则、班戈一线需要，务必出发前办好。</p></div>
-      <div class="tip gold reveal"><span class="tag">租车</span><p><b>8 月底租车、租枕头氧气</b>；林芝段自驾，到拉萨还车。另包商务车 1980 元/天(定金 1000 已付)走日喀则—藏北线。</p></div>
-      <div class="tip reveal"><span class="tag">预约</span><p><b>布达拉宫</b>提前一周预约(200r，9:00-16:00，1/2 线)；<b>大昭寺</b>提前预约并请讲解。</p></div>
-      <div class="tip warn reveal"><span class="tag">高反</span><p><b>出发前 5-7 天开始服红景天</b>；进藏前别感冒、别熬夜、别剧烈运动。前三天(D1-D3)已刻意压低海拔适应，这是防高反的关键，别嫌前几天"太慢"。</p></div>
-      <div class="tip warn reveal"><span class="tag">高海拔之夜</span><p><b>班戈、当雄两晚(全程最高)</b>：到达当晚不洗澡、不饮酒、不吃太饱；多喝热水、放慢动作；车上和酒店各备一瓶便携氧气；睡前如头痛可服用布洛芬。</p></div>
-      <div class="tip reveal"><span class="tag">随身药</span><p>红景天、葡萄糖、布洛芬、感冒药；建议再备一盒<b>乙酰唑胺(丹木斯)</b>，但需遵医嘱。</p></div>
-      <div class="tip warn reveal"><span class="tag">危险信号</span><p>若出现持续剧烈头痛、呕吐、走路不稳、咳粉红色泡沫痰、意识模糊——<b>立即吸氧并下撤到低海拔(回当雄 / 拉萨)</b>，必要时就医，不要硬扛。</p></div>
-      <div class="tip reveal"><span class="tag">航班</span><p>进藏飞机<b>坐左侧</b>，雪山观景位；10/3 翻那根拉山口后 <b>13:00 必须出发去机场</b>。</p></div>
-      <div class="tip reveal"><span class="tag">装备</span><p>注意<b>保暖防风、防晒</b>；昼夜温差大(最低 -5°C)。色林措 / 纳木措湖边风大温度低，备好冲锋衣、帽子、墨镜、高倍防晒。适应海拔、买零食放车上。</p></div>
-      <div class="tip gold reveal"><span class="tag">衣物</span><p><b>三合一冲锋衣</b>(防风防雨，最实用)；轻薄羽绒服或厚抓绒(班戈、色林措、纳木措必备)；保暖帽、围巾 / 脖套、手套；墨镜、防晒霜 SPF50+、润唇膏、保湿霜；徒步鞋 / 防滑鞋(<b>不要穿新鞋</b>)。</p></div>
+      <div class="tip warn reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.2" cy="10.8" r="1.8"/><path d="M5.6 15.6c.5-1.4 4.7-1.4 5.2 0"/><path d="M13.5 9.6h4.7M13.5 12.8h4.7"/></svg>证件</span><p><b>申请边防证</b>——羊湖、卡若拉、日喀则、班戈一线需要，务必出发前办好。</p></div>
+      <div class="tip gold reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.5v-3l1.8-4.6A1.5 1.5 0 0 1 7.2 7h9.6a1.5 1.5 0 0 1 1.4.9L20 12.5v3"/><path d="M4 12.5h16"/><circle cx="8" cy="16.8" r="1.7"/><circle cx="16" cy="16.8" r="1.7"/><path d="M9.8 16.8h4.4"/></svg>租车</span><p><b>8 月底租车、租枕头氧气</b>；林芝段自驾，到拉萨还车。另包商务车 1980 元/天(定金 1000 已付)走日喀则—藏北线。</p></div>
+      <div class="tip reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8.5 3v4M15.5 3v4M4 10.5h16"/><path d="M9 15l2.2 2.2 4-4.2"/></svg>预约</span><p><b>布达拉宫</b>提前一周预约(200r，9:00-16:00，1/2 线)；<b>大昭寺</b>提前预约并请讲解。</p></div>
+      <div class="tip warn reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19l6.5-11.5L14 15l2.6-4.4L21 19H3z"/><circle cx="18.2" cy="6" r="1.9"/></svg>高反</span><p><b>出发前 5-7 天开始服红景天</b>；进藏前别感冒、别熬夜、别剧烈运动。前三天(D1-D3)已刻意压低海拔适应，这是防高反的关键，别嫌前几天"太慢"。</p></div>
+      <div class="tip warn reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.2A7.8 7.8 0 0 1 9.8 4.5a7.8 7.8 0 1 0 9.7 9.7z"/><path d="M17 4l.5 1.5L19 6l-1.5.5L17 8l-.5-1.5L15 6l1.5-.5z"/></svg>高海拔之夜</span><p><b>班戈、当雄两晚(全程最高)</b>：到达当晚不洗澡、不饮酒、不吃太饱；多喝热水、放慢动作；车上和酒店各备一瓶便携氧气；睡前如头痛可服用布洛芬。</p></div>
+      <div class="tip reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M9.5 8V6.3A1.3 1.3 0 0 1 10.8 5h2.4a1.3 1.3 0 0 1 1.3 1.3V8"/><path d="M12 11.2v4.6M9.7 13.5h4.6"/></svg>随身药</span><p>红景天、葡萄糖、布洛芬、感冒药；建议再备一盒<b>乙酰唑胺(丹木斯)</b>，但需遵医嘱。</p></div>
+      <div class="tip warn reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.6L21 19.4H3z"/><path d="M12 10.2v4"/><path d="M12 16.6v.5"/></svg>危险信号</span><p>若出现持续剧烈头痛、呕吐、走路不稳、咳粉红色泡沫痰、意识模糊——<b>立即吸氧并下撤到低海拔(回当雄 / 拉萨)</b>，必要时就医，不要硬扛。</p></div>
+      <div class="tip reveal"><span class="tag"><svg viewBox="-9 -9 18 18" aria-hidden="true"><use href="#plane" fill="currentColor" stroke="none"/></svg>航班</span><p>进藏飞机<b>坐左侧</b>，雪山观景位；10/3 翻那根拉山口后 <b>13:00 必须出发去机场</b>。</p></div>
+      <div class="tip reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 7.5a3.5 3.5 0 0 1 7 0"/><rect x="5" y="7.5" width="14" height="12.5" rx="3"/><path d="M5 13.5h14"/><path d="M10 13.5v2.6h4v-2.6"/></svg>装备</span><p>注意<b>保暖防风、防晒</b>；昼夜温差大(最低 -5°C)。色林措 / 纳木措湖边风大温度低，备好冲锋衣、帽子、墨镜、高倍防晒。适应海拔、买零食放车上。</p></div>
+      <div class="tip gold reveal"><span class="tag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 4.2L3.5 7l1.9 3.3 1.8-1V20h9.6v-10.7l1.8 1L20.5 7l-4.7-2.8a3.8 3.8 0 0 1-7.6 0z"/></svg>衣物</span><p><b>三合一冲锋衣</b>(防风防雨，最实用)；轻薄羽绒服或厚抓绒(班戈、色林措、纳木措必备)；保暖帽、围巾 / 脖套、手套；墨镜、防晒霜 SPF50+、润唇膏、保湿霜；徒步鞋 / 防滑鞋(<b>不要穿新鞋</b>)。</p></div>
     </div>
   </div>
 </section>
