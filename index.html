@@ -43,6 +43,8 @@
   .routemap .lbl{font-size:15px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:4px;letter-spacing:.02em}
   .routemap .elv{font-size:11px;font-weight:500;fill:var(--muted);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:3px}
   .routemap .num{font-size:10px;font-weight:700;fill:#fff;text-anchor:middle}
+  .routemap a.pt{cursor:pointer}
+  .routemap a.pt:hover circle{stroke:var(--gold);stroke-width:3}
   .routemap .drive{fill:none;stroke:var(--maroon);stroke-width:3;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2000;stroke-dashoffset:2000;transition:stroke-dashoffset 2.6s ease .3s}
   .reveal.on .drive{stroke-dashoffset:0}
   .routemap .flight{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:7 7;opacity:0;transition:opacity .9s ease 1.6s}
@@ -161,20 +163,20 @@
         <path class="drive" d="M741,411 L807,415 L411,411 L362,495 L313,516 L181,464 L351,170 L209,110 L408,295 L388,257 L388,460"/>
 
         <g>
-          <circle cx="944" cy="652" r="8" fill="#31619f" stroke="#fffdf7" stroke-width="2"/><text x="930" y="657" class="lbl" text-anchor="end">杭州</text>
-          <circle cx="858" cy="596" r="8" fill="#31619f" stroke="#fffdf7" stroke-width="2"/><text x="872" y="592" class="lbl">成都</text>
+          <a class="pt" href="https://uri.amap.com/search?keyword=杭州&city=杭州" target="_blank" rel="noopener"><circle cx="944" cy="652" r="8" fill="#31619f" stroke="#fffdf7" stroke-width="2"/><text x="930" y="657" class="lbl" text-anchor="end">杭州</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=成都&city=成都" target="_blank" rel="noopener"><circle cx="858" cy="596" r="8" fill="#31619f" stroke="#fffdf7" stroke-width="2"/><text x="872" y="592" class="lbl">成都</text></a>
 
-          <circle cx="741" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="741" y="414.5" class="num">1</text><text x="727" y="398" class="lbl" text-anchor="end">林芝 · 米林</text><text x="727" y="414" class="elv" text-anchor="end">2800m</text>
-          <circle cx="807" cy="415" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="807" y="418.5" class="num">2</text><text x="821" y="404" class="lbl">雅鲁藏布江峡谷</text><text x="821" y="420" class="elv">南迦巴瓦 · 日照金山</text>
-          <circle cx="411" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="411" y="414.5" class="num">3</text><text x="397" y="398" class="lbl" text-anchor="end">拉萨</text><text x="397" y="414" class="elv" text-anchor="end">3650m</text>
-          <circle cx="362" cy="495" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="362" y="498.5" class="num">4</text><text x="348" y="488" class="lbl" text-anchor="end">羊湖</text><text x="348" y="504" class="elv" text-anchor="end">4441m</text>
-          <circle cx="313" cy="516" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="313" y="519.5" class="num">5</text><text x="313" y="545" class="lbl" text-anchor="middle">卡若拉冰川</text><text x="313" y="560" class="elv" text-anchor="middle">5020m</text>
-          <circle cx="181" cy="464" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="181" y="467.5" class="num">6</text><text x="167" y="452" class="lbl" text-anchor="end">日喀则 · 扎什伦布寺</text><text x="167" y="468" class="elv" text-anchor="end">3850m</text>
-          <circle cx="351" cy="170" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="351" y="173.5" class="num">7</text><text x="365" y="166" class="lbl">班戈</text><text x="365" y="182" class="elv">4700m</text>
-          <circle cx="209" cy="110" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="209" y="113.5" class="num">8</text><text x="223" y="104" class="lbl">色林措</text><text x="223" y="120" class="elv">4530m</text>
-          <circle cx="408" cy="295" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="408" y="298.5" class="num">9</text><text x="422" y="292" class="lbl">当雄</text><text x="422" y="308" class="elv">4300m</text>
-          <circle cx="388" cy="257" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="388" y="260.5" class="num">10</text><text x="374" y="246" class="lbl" text-anchor="end">纳木措</text><text x="374" y="262" class="elv" text-anchor="end">4718m</text>
-          <circle cx="388" cy="460" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="388" y="463.5" class="num">11</text><text x="402" y="474" class="lbl">贡嘎机场</text>
+          <a class="pt" href="https://uri.amap.com/search?keyword=米林&city=林芝" target="_blank" rel="noopener"><circle cx="741" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="741" y="414.5" class="num">1</text><text x="727" y="398" class="lbl" text-anchor="end">林芝 · 米林</text><text x="727" y="414" class="elv" text-anchor="end">2800m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=雅鲁藏布大峡谷&city=林芝" target="_blank" rel="noopener"><circle cx="807" cy="415" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="807" y="418.5" class="num">2</text><text x="821" y="404" class="lbl">雅鲁藏布江峡谷</text><text x="821" y="420" class="elv">南迦巴瓦 · 日照金山</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=拉萨&city=拉萨" target="_blank" rel="noopener"><circle cx="411" cy="411" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="411" y="414.5" class="num">3</text><text x="397" y="398" class="lbl" text-anchor="end">拉萨</text><text x="397" y="414" class="elv" text-anchor="end">3650m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=羊卓雍措&city=山南" target="_blank" rel="noopener"><circle cx="362" cy="495" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="362" y="498.5" class="num">4</text><text x="348" y="488" class="lbl" text-anchor="end">羊湖</text><text x="348" y="504" class="elv" text-anchor="end">4441m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=卡若拉冰川&city=日喀则" target="_blank" rel="noopener"><circle cx="313" cy="516" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="313" y="519.5" class="num">5</text><text x="313" y="545" class="lbl" text-anchor="middle">卡若拉冰川</text><text x="313" y="560" class="elv" text-anchor="middle">5020m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=扎什伦布寺&city=日喀则" target="_blank" rel="noopener"><circle cx="181" cy="464" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="181" y="467.5" class="num">6</text><text x="167" y="452" class="lbl" text-anchor="end">日喀则 · 扎什伦布寺</text><text x="167" y="468" class="elv" text-anchor="end">3850m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=班戈县&city=那曲" target="_blank" rel="noopener"><circle cx="351" cy="170" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="351" y="173.5" class="num">7</text><text x="365" y="166" class="lbl">班戈</text><text x="365" y="182" class="elv">4700m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=色林措&city=那曲" target="_blank" rel="noopener"><circle cx="209" cy="110" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="209" y="113.5" class="num">8</text><text x="223" y="104" class="lbl">色林措</text><text x="223" y="120" class="elv">4530m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=当雄&city=拉萨" target="_blank" rel="noopener"><circle cx="408" cy="295" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="408" y="298.5" class="num">9</text><text x="422" y="292" class="lbl">当雄</text><text x="422" y="308" class="elv">4300m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=纳木措&city=拉萨" target="_blank" rel="noopener"><circle cx="388" cy="257" r="9" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="388" y="260.5" class="num">10</text><text x="374" y="246" class="lbl" text-anchor="end">纳木措</text><text x="374" y="262" class="elv" text-anchor="end">4718m</text></a>
+          <a class="pt" href="https://uri.amap.com/search?keyword=拉萨贡嘎机场&city=拉萨" target="_blank" rel="noopener"><circle cx="388" cy="460" r="9" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="388" y="463.5" class="num">11</text><text x="402" y="474" class="lbl">贡嘎机场</text></a>
         </g>
       </svg>
     </div>
