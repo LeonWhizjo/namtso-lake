@@ -75,7 +75,9 @@ b{color:#3d3729}
   }
 
   function webFallback(){
-    var ct = 'https://flights.ctrip.com/actualtime/detail?flightNo=' + encodeURIComponent(fn || '') + '&depDate=' + encodeURIComponent(dt || '');
+    var ct = isMob
+      ? 'https://m.ctrip.com/webapp/flight/schedule/detail.html?flightNo=' + encodeURIComponent(fn || '')
+      : 'https://flights.ctrip.com/actualtime/detail?flightNo=' + encodeURIComponent(fn || '') + '&date=' + encodeURIComponent(dt || '');
     var bd = 'https://www.baidu.com/s?wd=' + encodeURIComponent((fn || '航班') + ' 航班动态');
     tt.textContent = '正在打开 ' + (fn || '') + ' 航班动态…';
     msg.innerHTML = '网页版航班动态含<b>值机柜台、登机口、行李转盘</b>等信息。<br>若未自动跳转，请点击下方按钮。';
