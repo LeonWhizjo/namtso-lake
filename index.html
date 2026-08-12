@@ -9,7 +9,7 @@
 <link rel="preload" as="image" href="assets/namchabarwa_hero.jpg">
 <style>
   :root{
-    --ink:#22303f; --paper:#f7f3ea; --card:#fffdf7;
+    --ink:#22303f; --paper:#211f1b; --card:#fffdf7;
     --maroon:#8c2f24; --maroon-d:#6d2118;
     --gold:#c9972c; --teal:#2b8c96; --sky:#31619f;
     --line:#e4dccb; --muted:#7a7466;
@@ -17,7 +17,7 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+  body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;background:var(--paper) url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='15'%20height='15'%3E%3Crect%20x='6'%20y='7'%20width='3'%20height='1'%20fill='%232d2b26'/%3E%3Crect%20x='7'%20y='6'%20width='1'%20height='3'%20fill='%232d2b26'/%3E%3C/svg%3E") repeat;background-size:15px 15px;color:var(--ink);line-height:1.75}
   .serif{font-family:"Songti SC","STSong","SimSun",serif}
 
   /* ---------- hero ---------- */
@@ -39,8 +39,9 @@
   section{padding:64px 0 8px}
   .sec-title{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
   .sec-title .no{font-size:13px;letter-spacing:.3em;color:var(--gold);font-weight:700}
-  .sec-title h2{font-size:clamp(22px,3.4vw,32px);letter-spacing:.1em;color:var(--maroon)}
-  .sec-desc{color:var(--muted);font-size:14px;margin-bottom:28px}
+  .sec-title h2{font-size:clamp(22px,3.4vw,32px);letter-spacing:.1em;color:#f0ead9}
+  .sec-desc{color:#a49b88;font-size:14px;margin-bottom:28px}
+  .sec-desc a.map{color:#e8b73a;border-bottom-color:#e8b73a}
 
   /* ---------- route strip ---------- */
   .routemap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
@@ -71,7 +72,7 @@
   .routemap .flight{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:7 7;opacity:.85;transition:opacity .9s ease 1.6s}
   .js .reveal:not(.on) .flight{opacity:0}
   .reveal.on .flight{opacity:.85}
-  .legend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:12px;font-size:12.5px;color:var(--muted);letter-spacing:.03em}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:12px;font-size:12.5px;color:#a49b88;letter-spacing:.03em}
   .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
   .legend .ln{display:inline-block;width:22px;border-top:3px solid #18a85e;border-radius:2px;margin-right:6px;vertical-align:3px}
   .legend .ln.dash{border-top:2px dashed var(--sky)}
