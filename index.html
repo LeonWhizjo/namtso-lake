@@ -133,13 +133,15 @@
   .day.fold .day-head{margin-bottom:0}
   .day.fold .day-head h3{display:none}
   .day.fold:hover{background:#fff;box-shadow:0 4px 14px rgba(93,74,42,.10)}
-  .tgl{margin-left:auto;width:22px;height:22px;line-height:20px;text-align:center;font-size:15px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.7);cursor:pointer;font-family:inherit;padding:0;transition:color .2s,border-color .2s,transform .2s}
-  .tgl:hover{color:var(--maroon);border-color:var(--gold);transform:scale(1.1)}
+  .tgl{order:2;margin-left:auto;width:26px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--muted);background:none;border:none;cursor:pointer;padding:0;transition:color .2s}
+  .tgl:hover{color:var(--maroon)}
+  .tgl svg{width:15px;height:10px;transition:transform .25s ease}
+  .day:not(.fold) .tgl svg{transform:rotate(180deg)}
   .timeline.poker::before,.timeline.poker::after{display:none}
   .timeline.poker .day.fold{padding:13px 18px;margin-bottom:-14px;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(93,74,42,.10);transition:transform .2s ease,box-shadow .2s ease}
   .timeline.poker .day.fold:last-child{margin-bottom:0}
   .timeline.poker .day.fold .day-badge{display:none}
-  .timeline.poker .day.fold .day-head h3{display:block;width:auto;font-size:15px;letter-spacing:.04em}
+  .timeline.poker .day.fold .day-head h3{order:1;display:block;width:auto;font-size:15px;letter-spacing:.04em}
   .timeline.poker .day.fold:nth-child(odd){transform:rotate(.4deg)}
   .timeline.poker .day.fold:nth-child(even){transform:rotate(-.4deg)}
   .timeline.poker .day.fold:hover{transform:none;z-index:6;box-shadow:0 10px 24px rgba(93,74,42,.18)}
@@ -148,7 +150,7 @@
   .day-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
   .day-badge{background:var(--maroon);color:#ffe9c2;font-size:12px;letter-spacing:.22em;font-weight:700;border-radius:6px;padding:4px 10px}
   .day-date{font-size:13px;color:var(--muted);letter-spacing:.1em}
-  .day-head h3{width:100%;font-size:clamp(18px,2.6vw,24px);letter-spacing:.06em;color:var(--ink)}
+  .day-head h3{order:3;width:100%;font-size:clamp(18px,2.6vw,24px);letter-spacing:.06em;color:var(--ink)}
   .meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
   .meta span{font-size:12.5px;background:#f2ecdd;border-radius:999px;padding:4px 12px;color:#5c5546;letter-spacing:.03em}
   .meta span.alt{background:#e8f0f2;color:#22626b}
@@ -547,12 +549,14 @@
   function paint(d, fold) {
     if (fold) { d.classList.add('fold'); } else { d.classList.remove('fold'); }
     var b = d.querySelector('.tgl');
-    if (b) { b.textContent = '+'; b.style.display = fold ? '' : 'none'; b.setAttribute('aria-label', '展开'); }
+    if (b) { b.setAttribute('aria-label', fold ? '展开' : '收起'); }
   }
   for (var i = 0; i < days.length; i++) {
     (function (d) {
       var hd = d.querySelector('.day-head'); var ds = d.querySelector('.day-date');
-      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'tgl'; hd.appendChild(btn);
+      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'tgl';
+      btn.innerHTML = '<svg viewBox="0 0 16 10" aria-hidden="true"><path d="M2 2l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      hd.appendChild(btn);
       var past = poker;
       if (!past && ds) { var t = ds.textContent.split(' ')[0].split('/'); past = new Date(year, +t[0] - 1, +t[1]) < today; }
       paint(d, past);
