@@ -33,7 +33,12 @@
   .hero-sub svg.bi .dash{stroke-dasharray:4 3}
   .hero-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
   .hero-stats span{border:1px solid rgba(255,255,255,.45);background:rgba(20,26,40,.35);backdrop-filter:blur(4px);padding:6px 16px;border-radius:999px;font-size:13px;letter-spacing:.06em}
-  .flags{height:6px;background:linear-gradient(90deg,var(--flag-blue) 0 20%,var(--flag-white) 0 40%,var(--flag-red) 0 60%,var(--flag-green) 0 80%,var(--flag-yellow) 0 100%)}
+  .flags{position:relative;height:2px;border-radius:999px;background:linear-gradient(90deg,transparent 0%,var(--flag-blue) 14%,var(--teal) 32%,var(--gold) 50%,var(--flag-red) 68%,var(--flag-green) 86%,transparent 100%)}
+  .flags::before{content:"";position:absolute;inset:0;border-radius:inherit;background:inherit;filter:blur(7px);animation:glowpulse 3.4s ease-in-out infinite}
+  .flags::after{content:"";position:absolute;top:0;bottom:0;left:-30%;width:30%;border-radius:inherit;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);animation:flagsheen 4.2s ease-in-out infinite}
+  @keyframes glowpulse{0%,100%{opacity:.4}50%{opacity:.95}}
+  @keyframes flagsheen{0%{left:-30%}60%,100%{left:100%}}
+  @media (prefers-reduced-motion:reduce){.flags::before{animation:none;opacity:.6}.flags::after{animation:none;left:35%}}
 
   /* ---------- layout ---------- */
   .wrap{max-width:1020px;margin:0 auto;padding:0 20px}
@@ -106,7 +111,10 @@
 
   /* ---------- days ---------- */
   .day{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;margin-bottom:26px;box-shadow:0 2px 12px rgba(93,74,42,.07)}
-  .day::before{content:"";position:absolute;left:-1px;top:22px;bottom:22px;width:4px;border-radius:4px;background:linear-gradient(var(--flag-blue),var(--flag-red),var(--flag-yellow),var(--flag-green))}
+  .day::before{content:"";position:absolute;left:-1px;top:22px;bottom:22px;width:3px;border-radius:4px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.9),transparent) 0 0/100% 38% no-repeat,linear-gradient(180deg,transparent 0%,var(--flag-blue) 20%,var(--teal) 40%,var(--gold) 58%,var(--flag-red) 78%,transparent 100%);animation:barsheen 3.8s ease-in-out infinite}
+  .day::after{content:"";position:absolute;left:-2px;top:22px;bottom:22px;width:5px;border-radius:6px;background:linear-gradient(180deg,transparent 0%,var(--flag-blue) 20%,var(--teal) 40%,var(--gold) 58%,var(--flag-red) 78%,transparent 100%);filter:blur(6px);animation:glowpulse 3.4s ease-in-out infinite}
+  @keyframes barsheen{0%{background-position:0 -45%,0 0}70%,100%{background-position:0 145%,0 0}}
+  @media (prefers-reduced-motion:reduce){.day::before{animation:none}.day::after{animation:none;opacity:.6}}
   .day-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
   .day-badge{background:var(--maroon);color:#ffe9c2;font-size:12px;letter-spacing:.22em;font-weight:700;border-radius:6px;padding:4px 10px}
   .day-date{font-size:13px;color:var(--muted);letter-spacing:.1em}
