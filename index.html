@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>逐湖之旅· Namtso Lake | 9.26 – 10.4</title>
+<script>document.documentElement.className+=' js';</script>
 <link rel="preload" as="image" href="assets/namchabarwa_hero.jpg">
 <style>
   :root{
@@ -48,7 +49,8 @@
   .routemap .grat path{stroke:#c9d4b6;stroke-width:1;stroke-dasharray:3 6;fill:none}
   .routemap .glbl{font-size:10px;font-weight:600;fill:#a3a284;letter-spacing:.05em}
   .routemap .plbl{font-size:11.2px;font-weight:600;fill:#a4977a;letter-spacing:.3em}
-  .routemap .plg{opacity:0;transition:opacity .9s ease 1.7s}
+  .routemap .plg{opacity:.9;transition:opacity .9s ease 1.7s}
+  .js .reveal:not(.on) .plg{opacity:0}
   .reveal.on .plg{opacity:.9}
   .routemap use.pl{fill:#31619f;stroke:#fffdf7;stroke-width:1.2;paint-order:stroke}
   .routemap .lbl{font-size:8.8px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:2.5px;letter-spacing:.02em}
@@ -57,13 +59,16 @@
   .routemap .wk{font-size:13px;font-weight:600;fill:#8b93a3;paint-order:stroke;stroke:rgba(255,253,247,.9);stroke-width:3px}
   .routemap a.pt{cursor:pointer}
   .routemap a.pt:hover circle{stroke:var(--gold);stroke-width:3}
-  .routemap .drive{fill:none;stroke:#18a85e;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2000;stroke-dashoffset:2000;transition:stroke-dashoffset 2.6s ease .3s}
+  .routemap .drive{fill:none;stroke:#18a85e;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2000;stroke-dashoffset:0;transition:stroke-dashoffset 2.6s ease .3s}
+  .js .reveal:not(.on) .drive{stroke-dashoffset:2000}
   .reveal.on .drive{stroke-dashoffset:0}
-  .routemap .drive-flow{fill:none;stroke:#fffdf7;stroke-width:1.25;stroke-linecap:round;stroke-dasharray:16 34;opacity:0;transition:opacity .7s ease 2.5s;animation:driveflow 1.2s linear infinite}
+  .routemap .drive-flow{fill:none;stroke:#fffdf7;stroke-width:1.25;stroke-linecap:round;stroke-dasharray:16 34;opacity:.92;transition:opacity .7s ease 2.5s;animation:driveflow 1.2s linear infinite}
+  .js .reveal:not(.on) .drive-flow{opacity:0}
   .reveal.on .drive-flow{opacity:.92}
   @keyframes driveflow{to{stroke-dashoffset:-50}}
   @media (prefers-reduced-motion:reduce){.routemap .drive-flow{animation:none;stroke-dashoffset:0}}
-  .routemap .flight{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:7 7;opacity:0;transition:opacity .9s ease 1.6s}
+  .routemap .flight{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:7 7;opacity:.85;transition:opacity .9s ease 1.6s}
+  .js .reveal:not(.on) .flight{opacity:0}
   .reveal.on .flight{opacity:.85}
   .legend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:12px;font-size:12.5px;color:var(--muted);letter-spacing:.03em}
   .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
@@ -135,8 +140,8 @@
   footer .wrap{padding:36px 20px 44px;font-size:13px;letter-spacing:.04em}
   footer b{color:#ffd98a}
 
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.on{opacity:1;transform:none}
+  .reveal{transition:opacity .7s ease,transform .7s ease}
+  .js .reveal:not(.on){opacity:0;transform:translateY(18px)}
 
   @media (max-width:640px){
     .day{padding:20px 16px}
@@ -445,8 +450,17 @@
 </footer>
 
 <script>
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:.08});
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  function allOn(){ for (var i = 0; i < els.length; i++) els[i].classList.add('on'); }
+  if (!('IntersectionObserver' in window)) { allOn(); return; }
+  try {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, {threshold:.08});
+    for (var i = 0; i < els.length; i++) io.observe(els[i]);
+  } catch(e){ allOn(); }
+})();
 </script>
 </body>
 </html>
