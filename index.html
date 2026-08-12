@@ -135,6 +135,15 @@
   .day.fold:hover{background:#fff;box-shadow:0 4px 14px rgba(93,74,42,.10)}
   .tgl{margin-left:auto;width:22px;height:22px;line-height:20px;text-align:center;font-size:15px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.7);cursor:pointer;font-family:inherit;padding:0;transition:color .2s,border-color .2s,transform .2s}
   .tgl:hover{color:var(--maroon);border-color:var(--gold);transform:scale(1.1)}
+  .timeline.poker::before,.timeline.poker::after{display:none}
+  .timeline.poker .day.fold{padding:13px 18px;margin-bottom:-14px;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(93,74,42,.10);transition:transform .2s ease,box-shadow .2s ease}
+  .timeline.poker .day.fold:last-child{margin-bottom:0}
+  .timeline.poker .day.fold .day-badge{display:none}
+  .timeline.poker .day.fold .day-head h3{display:block;width:auto;font-size:15px;letter-spacing:.04em}
+  .timeline.poker .day.fold:nth-child(odd){transform:rotate(.4deg)}
+  .timeline.poker .day.fold:nth-child(even){transform:rotate(-.4deg)}
+  .timeline.poker .day.fold:hover{transform:none;z-index:6;box-shadow:0 10px 24px rgba(93,74,42,.18)}
+  @media (max-width:640px){.timeline.poker .day.fold{margin-bottom:-10px}.timeline.poker .day.fold .day-head h3{font-size:13px}}
   @media (prefers-reduced-motion:reduce){.timeline::after{animation:none}.day.now{animation:none}}
   .day-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
   .day-badge{background:var(--maroon);color:#ffe9c2;font-size:12px;letter-spacing:.22em;font-weight:700;border-radius:6px;padding:4px 10px}
@@ -528,6 +537,13 @@
   var year = +tl.getAttribute('data-year') || new Date().getFullYear();
   var now = new Date(); var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   var days = tl.querySelectorAll('.day');
+  var parsed = [];
+  for (var m = 0; m < days.length; m++) {
+    var ds3 = days[m].querySelector('.day-date');
+    if (ds3) { var q = ds3.textContent.split(' ')[0].split('/'); parsed.push({ el: days[m], t: new Date(year, +q[0] - 1, +q[1]) }); }
+  }
+  var poker = !!parsed.length && today.getTime() > parsed[parsed.length - 1].t.getTime();
+  if (poker) tl.classList.add('poker');
   function paint(d, fold) {
     if (fold) { d.classList.add('fold'); } else { d.classList.remove('fold'); }
     var b = d.querySelector('.tgl');
@@ -537,26 +553,21 @@
     (function (d) {
       var hd = d.querySelector('.day-head'); var ds = d.querySelector('.day-date');
       var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'tgl'; hd.appendChild(btn);
-      var past = false;
-      if (ds) { var t = ds.textContent.split(' ')[0].split('/'); past = new Date(year, +t[0] - 1, +t[1]) < today; }
+      var past = poker;
+      if (!past && ds) { var t = ds.textContent.split(' ')[0].split('/'); past = new Date(year, +t[0] - 1, +t[1]) < today; }
       paint(d, past);
       btn.onclick = function () { paint(d, !d.classList.contains('fold')); };
       d.addEventListener('click', function () { if (d.classList.contains('fold')) paint(d, false); });
     })(days[i]);
   }
-  var parsed = [];
-  for (var m = 0; m < days.length; m++) {
-    var ds3 = days[m].querySelector('.day-date');
-    if (ds3) { var q = ds3.textContent.split(' ')[0].split('/'); parsed.push({ el: days[m], t: new Date(year, +q[0] - 1, +q[1]) }); }
-  }
-  if (parsed.length) {
+  if (parsed.length && !poker) {
     var target = null;
-    for (var n = 0; n < parsed.length; n++) { if (parsed[n].t.getTime() === today.getTime()) { target = parsed[n].el; break; } }
-    if (!target) target = today < parsed[0].t ? parsed[0].el : parsed[parsed.length - 1].el;
-    if (target.classList.contains('fold')) paint(target, false);
-    target.classList.add('now');
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    setTimeout(function () { target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }, 400);
+    for (var n = 1; n < parsed.length; n++) { if (parsed[n].t.getTime() === today.getTime()) { target = parsed[n].el; break; } }
+    if (target) {
+      target.classList.add('now');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function () { target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }, 400);
+    }
   }
 })();
 </script>
