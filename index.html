@@ -54,35 +54,41 @@
   /* ---------- route strip ---------- */
   .routemap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
   .routemap svg{display:block;width:100%;height:auto}
-  .routemap .prov{stroke:#b3a685;stroke-width:1.1;fill:#f0ead9}
-  .routemap .prov.xz{fill:#e4efd6;stroke:#9db08c;stroke-width:1.5}
-  .routemap .grat path{stroke:#c9d4b6;stroke-width:1;stroke-dasharray:3 6;fill:none}
-  .routemap .glbl{font-size:10px;font-weight:600;fill:#a3a284;letter-spacing:.05em}
-  .routemap .plbl{font-size:11.2px;font-weight:600;fill:#a4977a;letter-spacing:.3em}
+  .routemap .prov{stroke:#3c4f66;stroke-width:1.1;fill:#1b2a3a}
+  .routemap .prov.xz{fill:#20344a;stroke:#4f6f92;stroke-width:1.5}
+  .routemap .grat path{stroke:#33465c;stroke-width:1;stroke-dasharray:3 6;fill:none}
+  .routemap .glbl{font-size:10px;font-weight:600;fill:#7b90aa;letter-spacing:.05em}
+  .routemap .plbl{font-size:11.2px;font-weight:600;fill:#93a9c6;letter-spacing:.3em}
   .routemap .plg{opacity:.9;transition:opacity .9s ease 1.7s}
   .js .reveal:not(.on) .plg{opacity:0}
   .reveal.on .plg{opacity:.9}
-  .routemap use.pl{fill:#31619f;stroke:#fffdf7;stroke-width:1.2;paint-order:stroke}
-  .routemap .lbl{font-size:8.8px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:2.5px;letter-spacing:.02em}
-  .routemap .elv{font-size:7.8px;font-weight:500;fill:var(--muted);paint-order:stroke;stroke:rgba(255,253,247,.92);stroke-width:2.1px}
+  .routemap use.pl{fill:#7fb4ef;stroke:#0e1826;stroke-width:1.2;paint-order:stroke}
+  .routemap .lbl{font-size:8.8px;font-weight:600;fill:#ecf2fa;paint-order:stroke;stroke:rgba(9,15,24,.88);stroke-width:2.5px;letter-spacing:.02em}
+  .routemap .elv{font-size:7.8px;font-weight:500;fill:#9fb2c9;paint-order:stroke;stroke:rgba(9,15,24,.88);stroke-width:2.1px}
   .routemap .num{font-size:7px;font-weight:700;fill:#fff;text-anchor:middle}
-  .routemap .wk{font-size:13px;font-weight:600;fill:#8b93a3;paint-order:stroke;stroke:rgba(255,253,247,.9);stroke-width:3px}
+  .routemap .wk{font-size:13px;font-weight:600;fill:#b3c3d9;paint-order:stroke;stroke:rgba(9,15,24,.88);stroke-width:3px}
   .routemap a.pt{cursor:pointer}
   .routemap a.pt:hover circle{stroke:var(--gold);stroke-width:3}
-  .routemap .drive{fill:none;stroke:#18a85e;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2000;stroke-dashoffset:0;transition:stroke-dashoffset 2.6s ease .3s}
+  .routemap .hubring{fill:none;stroke:var(--sky);stroke-width:1.5;opacity:.7}
+  .routemap .drive{fill:none;stroke:#1fc06c;stroke-width:2.1;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2000;stroke-dashoffset:0;transition:stroke-dashoffset 2.6s ease .3s}
   .js .reveal:not(.on) .drive{stroke-dashoffset:2000}
   .reveal.on .drive{stroke-dashoffset:0}
   .routemap .drive-flow{fill:none;stroke:#fffdf7;stroke-width:1.25;stroke-linecap:round;stroke-dasharray:16 34;opacity:.92;transition:opacity .7s ease 2.5s;animation:driveflow 1.2s linear infinite}
   .js .reveal:not(.on) .drive-flow{opacity:0}
   .reveal.on .drive-flow{opacity:.92}
   @keyframes driveflow{to{stroke-dashoffset:-50}}
-  @media (prefers-reduced-motion:reduce){.routemap .drive-flow{animation:none;stroke-dashoffset:0}}
-  .routemap .flight{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:7 7;opacity:.85;transition:opacity .9s ease 1.6s}
+  .routemap .flight{fill:none;stroke:var(--sky);stroke-width:2;stroke-dasharray:7 7;opacity:.8;transition:opacity .9s ease 1.6s}
   .js .reveal:not(.on) .flight{opacity:0}
-  .reveal.on .flight{opacity:.85}
+  .reveal.on .flight{opacity:.8}
+  .routemap .flight-flow{fill:none;stroke:#8ec4ff;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:10 50;opacity:0;transition:opacity .7s ease 2.3s;animation:flightflow 1.9s linear infinite}
+  .js .reveal:not(.on) .flight-flow{opacity:0}
+  .reveal.on .flight-flow{opacity:.95}
+  @keyframes flightflow{to{stroke-dashoffset:-60}}
+  @media (prefers-reduced-motion:reduce){.routemap .drive-flow,.routemap .flight-flow{animation:none;stroke-dashoffset:0}}
+  .routemap .plnote text{font-size:8.2px;font-weight:600;fill:#ffe9c2;letter-spacing:.04em}
   .legend{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:12px;font-size:12.5px;color:var(--muted);letter-spacing:.03em}
   .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-  .legend .ln{display:inline-block;width:22px;border-top:3px solid #18a85e;border-radius:2px;margin-right:6px;vertical-align:3px}
+  .legend .ln{display:inline-block;width:22px;border-top:3px solid #1fc06c;border-radius:2px;margin-right:6px;vertical-align:3px}
   .legend .ln.dash{border-top:2px dashed var(--sky)}
 
   /* ---------- tips ---------- */
@@ -205,6 +211,9 @@
     .routemap .drive{stroke-width:2.8}
     .routemap .drive-flow{stroke-width:1.7}
     .routemap .flight{stroke-width:3}
+    .routemap .flight-flow{stroke-width:3.4}
+    .routemap a.pt circle.hubring{r:11.5;stroke-width:2.2}
+    .routemap .plnote text{font-size:15px}
     .routemap .plbl{font-size:19.7px}
     .routemap .wk{font-size:17px}
     .routemap .glbl{font-size:17px}
@@ -239,8 +248,14 @@
       <svg viewBox="0 0 1000 700" role="img" aria-label="西藏环线路线示意图：杭州、成都飞林芝，经拉萨、日喀则、藏北环线，最后经纳木措到贡嘎机场">
         <defs>
           <path id="plane" d="M0,-7.5 C0.9,-7.5 1.5,-5.8 1.5,-4 L1.6,-1.6 L7,1 L7,2.4 L1.5,1.4 L1.2,4.6 L3,6.4 L3,7.6 L0,6.8 L-3,7.6 L-3,6.4 L-1.2,4.6 L-1.5,1.4 L-7,2.4 L-7,1 L-1.6,-1.6 L-1.5,-4 C-1.5,-5.8 -0.9,-7.5 0,-7.5 Z"/>
+          <radialGradient id="mapbg" cx="42%" cy="42%" r="80%">
+            <stop offset="0%" stop-color="#16273a"/>
+            <stop offset="100%" stop-color="#0c141f"/>
+          </radialGradient>
+          <clipPath id="mapclip"><rect x="0" y="0" width="1000" height="700" rx="18"/></clipPath>
         </defs>
-        <rect x="0" y="0" width="1000" height="700" rx="18" fill="#e9f0dd" stroke="#d9cfb6"/>
+        <rect x="0" y="0" width="1000" height="700" rx="18" fill="url(#mapbg)" stroke="#2c3f55"/>
+        <g clip-path="url(#mapclip)">
         <g class="grat">
           <path d="M219,24 V676"/>
           <path d="M579,24 V676"/>
@@ -257,29 +272,33 @@
         </g>
         <g transform="translate(-110 -262) scale(1.42)">
         <text x="108" y="290" class="plbl">西藏自治区</text>
-        <ellipse cx="190" cy="360" rx="16" ry="6" fill="#a3cbd4"/>
-        <ellipse cx="277" cy="417" rx="13" ry="5" fill="#a3cbd4"/>
-        <ellipse cx="265" cy="515" rx="9" ry="4" fill="#a3cbd4"/>
+        <ellipse cx="190" cy="360" rx="16" ry="6" fill="#2e5875"/>
+        <ellipse cx="277" cy="417" rx="13" ry="5" fill="#2e5875"/>
+        <ellipse cx="265" cy="515" rx="9" ry="4" fill="#2e5875"/>
 
         <path class="drive" d="M452,478 C463,475 474,476 485,479 C420,460 350,462 290,478 C280,490 274,502 266,513 C258,517 250,520 242,522 C220,524 198,514 177,500 C190,455 225,415 260,377 C236,369 213,358 190,356 C222,366 258,394 289,430 C285,424 282,419 278,414 C275,442 273,472 278,499" pathLength="2000"/>
         <path class="drive-flow" d="M452,478 C463,475 474,476 485,479 C420,460 350,462 290,478 C280,490 274,502 266,513 C258,517 250,520 242,522 C220,524 198,514 177,500 C190,455 225,415 260,377 C236,369 213,358 190,356 C222,366 258,394 289,430 C285,424 282,419 278,414 C275,442 273,472 278,499" pathLength="2000"/>
         </g>
-        <g><circle cx="52" cy="64" r="16" fill="#fffdf7" stroke="#e4dccb"/><path d="M52,74 L52,56 M52,56 l-5,8 M52,56 l5,8" stroke="#8c2f24" stroke-width="2" fill="none"/><text x="52" y="98" class="glbl" text-anchor="middle">N</text></g>
+        <g><circle cx="52" cy="64" r="16" fill="#152233" stroke="#35506e"/><path d="M52,74 L52,56 M52,56 l-5,8 M52,56 l5,8" stroke="#d0604d" stroke-width="2" fill="none"/><text x="52" y="98" class="glbl" text-anchor="middle">N</text></g>
         <text x="980" y="686" class="glbl" text-anchor="end">示意图 · 省界简化 · 东部压缩</text>
-        <path d="M750,392 l14,-26 M763,398 l14,-26" stroke="#a3a284" stroke-width="2" fill="none" opacity=".65"/>
-        <rect x="778" y="252" width="204" height="252" rx="14" fill="#f4efe2" opacity=".75" stroke="#d9cfb6" stroke-dasharray="5 5"/>
+        <path d="M750,392 l14,-26 M763,398 l14,-26" stroke="#5d7492" stroke-width="2" fill="none" opacity=".6"/>
+        <rect x="778" y="252" width="204" height="252" rx="14" fill="#16273a" opacity=".55" stroke="#3c5170" stroke-dasharray="5 5"/>
         <text x="880" y="280" class="glbl" text-anchor="middle">东段 · 示意</text>
         <path class="flight" d="M944,352 Q910,320 872,318"/>
+        <path class="flight-flow" d="M944,352 Q910,320 872,318"/>
         <g class="plg" transform="translate(909 328) rotate(294)"><use class="pl" href="#plane"/></g>
         <path class="flight" d="M872,318 Q700,330 532,417"/>
+        <path class="flight-flow" d="M872,318 Q700,330 532,417"/>
         <g class="plg" transform="translate(701 349) rotate(254)"><use class="pl" href="#plane"/></g>
+        <g class="plnote"><line x1="700" y1="330" x2="701" y2="343" stroke="#c9972c" stroke-width="1" stroke-dasharray="2 3" opacity=".85"/><rect x="634" y="292" width="118" height="38" rx="7" fill="rgba(10,18,30,.66)" stroke="rgba(201,151,44,.6)" stroke-width="1"/><path d="M645,308 l4.5,-7 4.5,7 Z M652,308 l3,-4.6 3,4.6 Z" fill="#e8c98b"/><text x="662" y="308">进藏坐左侧</text><text x="646" y="322.5">赏雪山风光</text></g>
         <path class="flight" d="M285,447 Q600,560 872,330"/>
+        <path class="flight-flow" d="M285,447 Q600,560 872,330"/>
         <g class="plg" transform="translate(589 474) rotate(78)"><use class="pl" href="#plane"/></g>
-        <a class="pt" href="https://uri.amap.com/marker?position=104.066301,30.572961&name=成都&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="872" cy="318" r="6" fill="#31619f" stroke="#fffdf7" stroke-width="2" opacity=".55"/><text x="858" y="323" class="wk" text-anchor="end">双流T1</text></a>
-        <a class="pt" href="https://uri.amap.com/marker?position=120.211677,30.246566&name=杭州&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="944" cy="352" r="6" fill="#31619f" stroke="#fffdf7" stroke-width="2" opacity=".55"/><text x="944" y="372" class="wk" text-anchor="middle">萧山T4</text></a>
+        <a class="pt" href="https://uri.amap.com/marker?position=104.066301,30.572961&name=成都&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="872" cy="318" r="6" fill="#4a90e2" stroke="#0d1622" stroke-width="2" opacity=".85"/><text x="858" y="323" class="wk" text-anchor="end">双流T1</text></a>
+        <a class="pt" href="https://uri.amap.com/marker?position=120.211677,30.246566&name=杭州&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="944" cy="352" r="6" fill="#4a90e2" stroke="#0d1622" stroke-width="2" opacity=".85"/><text x="944" y="372" class="wk" text-anchor="middle">萧山T4</text></a>
 
         <g transform="translate(-110 -262) scale(1.42)">
-          <a class="pt" href="https://uri.amap.com/marker?position=94.213059,29.215971&name=米林&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="452" cy="478" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="452" y="481.5" class="num">1</text><text x="440" y="472" class="lbl" text-anchor="end">林芝 · 米林</text><text x="440" y="487" class="elv" text-anchor="end">2800m</text></a>
+          <a class="pt" href="https://uri.amap.com/marker?position=94.3338,29.3043&name=林芝米林机场&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="452" cy="478" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="452" y="481.5" class="num">1</text><text x="440" y="472" class="lbl" text-anchor="end">林芝 · 米林机场</text><text x="440" y="487" class="elv" text-anchor="end">2800m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=94.88183,29.612778&name=雅鲁藏布大峡谷&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="485" cy="479" r="6.4" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="485" y="482.5" class="num">2</text><text x="497" y="474" class="lbl">雅鲁藏布江峡谷</text><text x="497" y="489" class="elv">南迦巴瓦峰</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=91.171924,29.653491&name=拉萨&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="290" cy="478" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="290" y="481.5" class="num">3</text><text x="278" y="472" class="lbl" text-anchor="end">拉萨</text><text x="278" y="487" class="elv" text-anchor="end">3650m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=90.617828,29.190506&name=羊卓雍措&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="266" cy="513" r="6.4" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="266" y="516.5" class="num">4</text><text x="246" y="498" class="lbl" text-anchor="end">羊湖</text><text x="246" y="512" class="elv" text-anchor="end">4441m</text></a>
@@ -289,7 +308,8 @@
           <a class="pt" href="https://uri.amap.com/marker?position=89.147097,31.803634&name=色林措&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="190" cy="356" r="6.4" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="190" y="359.5" class="num">8</text><text x="202" y="351" class="lbl">色林措</text><text x="202" y="366" class="elv">4530m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=91.101186,30.473134&name=当雄&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="289" cy="430" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="289" y="433.5" class="num">9</text><text x="301" y="425" class="lbl">当雄</text><text x="301" y="440" class="elv">4300m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=91.129187,30.544918&name=纳木措国家风景区&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="278" cy="414" r="6.4" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="278" y="417.5" class="num">10</text><text x="266" y="409" class="lbl" text-anchor="end">纳木措</text><text x="266" y="424" class="elv" text-anchor="end">4718m</text></a>
-          <a class="pt" href="https://uri.amap.com/marker?position=90.896336,29.294506&name=拉萨贡嘎机场&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="278" cy="499" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="278" y="502.5" class="num">11</text><text x="290" y="504" class="lbl">贡嘎T3</text></a>
+          <a class="pt" href="https://uri.amap.com/marker?position=90.896336,29.294506&name=拉萨贡嘎机场&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle class="hubring" cx="278" cy="499" r="10.5"/><circle cx="278" cy="499" r="6.4" fill="#4a90e2" stroke="#fffdf7" stroke-width="2"/><text x="278" y="502.5" class="num">11</text><text x="290" y="504" class="lbl">贡嘎T3</text></a>
+        </g>
         </g>
 
       </svg>
@@ -297,10 +317,10 @@
     <div class="legend">
       <span><i class="dot" style="background:#8c2f24"></i>城市 / 住宿</span>
       <span><i class="dot" style="background:#c9972c"></i>景点</span>
-      <span><i class="dot" style="background:#31619f"></i>往返枢纽</span>
+      <span><i class="dot" style="background:#4a90e2"></i>往返枢纽</span>
       <span><i class="ln"></i>车行路线(按日程 1→11)</span>
       <span><i class="ln dash"></i>航段</span>
-      <span><i class="dot" style="background:#f0ead9;border:1.5px solid #b3a685;border-radius:3px"></i>省界</span>
+      <span><i class="dot" style="background:#1b2a3a;border:1.5px solid #4f6f92;border-radius:3px"></i>省界</span>
     </div>
   </div>
 </section>
