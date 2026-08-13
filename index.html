@@ -52,7 +52,7 @@
   .sec-desc a.map{color:var(--gold);border-bottom-color:var(--gold)}
 
   /* ---------- route strip ---------- */
-  .routemap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .routemap{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
   .routemap svg{display:block;width:100%;height:auto}
   .routemap .prov{stroke:#3c4f66;stroke-width:1.1;fill:#1b2a3a}
   .routemap .prov.xz{fill:#20344a;stroke:#4f6f92;stroke-width:1.5}
@@ -252,10 +252,8 @@
             <stop offset="0%" stop-color="#16273a"/>
             <stop offset="100%" stop-color="#0c141f"/>
           </radialGradient>
-          <clipPath id="mapclip"><rect x="0" y="0" width="1000" height="700" rx="18"/></clipPath>
         </defs>
-        <rect x="0" y="0" width="1000" height="700" rx="18" fill="url(#mapbg)" stroke="#2c3f55"/>
-        <g clip-path="url(#mapclip)">
+        <rect x="0" y="0" width="1000" height="700" fill="url(#mapbg)"/>
         <g class="grat">
           <path d="M219,24 V676"/>
           <path d="M579,24 V676"/>
@@ -298,7 +296,7 @@
         <a class="pt" href="https://uri.amap.com/marker?position=120.211677,30.246566&name=杭州&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="944" cy="352" r="6" fill="#4a90e2" stroke="#0d1622" stroke-width="2" opacity=".85"/><text x="944" y="372" class="wk" text-anchor="middle">萧山T4</text></a>
 
         <g transform="translate(-110 -262) scale(1.42)">
-          <a class="pt" href="https://uri.amap.com/marker?position=94.3338,29.3043&name=林芝米林机场&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="452" cy="478" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="452" y="481.5" class="num">1</text><text x="440" y="472" class="lbl" text-anchor="end">林芝 · 米林机场</text><text x="440" y="487" class="elv" text-anchor="end">2800m</text></a>
+          <a class="pt" href="https://uri.amap.com/marker?position=94.3338,29.3043&name=林芝米林机场&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle class="hubring" cx="452" cy="478" r="10.5"/><circle cx="452" cy="478" r="6.4" fill="#4a90e2" stroke="#fffdf7" stroke-width="2"/><text x="452" y="481.5" class="num">1</text><text x="440" y="472" class="lbl" text-anchor="end">林芝 · 米林</text><text x="440" y="487" class="elv" text-anchor="end">2800m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=94.88183,29.612778&name=雅鲁藏布大峡谷&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="485" cy="479" r="6.4" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="485" y="482.5" class="num">2</text><text x="497" y="474" class="lbl">雅鲁藏布江峡谷</text><text x="497" y="489" class="elv">南迦巴瓦峰</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=91.171924,29.653491&name=拉萨&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="290" cy="478" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="290" y="481.5" class="num">3</text><text x="278" y="472" class="lbl" text-anchor="end">拉萨</text><text x="278" y="487" class="elv" text-anchor="end">3650m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=90.617828,29.190506&name=羊卓雍措&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="266" cy="513" r="6.4" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="266" y="516.5" class="num">4</text><text x="246" y="498" class="lbl" text-anchor="end">羊湖</text><text x="246" y="512" class="elv" text-anchor="end">4441m</text></a>
@@ -309,7 +307,6 @@
           <a class="pt" href="https://uri.amap.com/marker?position=91.101186,30.473134&name=当雄&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="289" cy="430" r="6.4" fill="#8c2f24" stroke="#fffdf7" stroke-width="2"/><text x="289" y="433.5" class="num">9</text><text x="301" y="425" class="lbl">当雄</text><text x="301" y="440" class="elv">4300m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=91.129187,30.544918&name=纳木措国家风景区&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle cx="278" cy="414" r="6.4" fill="#c9972c" stroke="#fffdf7" stroke-width="2"/><text x="278" y="417.5" class="num">10</text><text x="266" y="409" class="lbl" text-anchor="end">纳木措</text><text x="266" y="424" class="elv" text-anchor="end">4718m</text></a>
           <a class="pt" href="https://uri.amap.com/marker?position=90.896336,29.294506&name=拉萨贡嘎机场&callnative=0&src=uriapi&coordinate=gaode" target="_blank" rel="noopener"><circle class="hubring" cx="278" cy="499" r="10.5"/><circle cx="278" cy="499" r="6.4" fill="#4a90e2" stroke="#fffdf7" stroke-width="2"/><text x="278" y="502.5" class="num">11</text><text x="290" y="504" class="lbl">贡嘎T3</text></a>
-        </g>
         </g>
 
       </svg>
