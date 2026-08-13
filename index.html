@@ -53,6 +53,7 @@
 
   /* ---------- route strip ---------- */
   .routemap{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .routemap .mapframe{border-radius:10px;overflow:hidden}
   .routemap svg{display:block;width:100%;height:auto}
   .routemap .prov{stroke:#3c4f66;stroke-width:1.1;fill:#1b2a3a}
   .routemap .prov.xz{fill:#20344a;stroke:#4f6f92;stroke-width:1.5}
@@ -245,6 +246,7 @@
     <div class="sec-title"><span class="no">ROUTE</span><h2 class="serif">路线总览</h2></div>
     <p class="sec-desc">先飞<a class="map" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=94.361436,29.64875&name=林芝&callnative=0&src=uriapi&coordinate=gaode">林芝</a>适应海拔，再由低到高深入藏北，最后经<a class="map" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=91.129187,30.544918&name=纳木措国家风景区&callnative=0&src=uriapi&coordinate=gaode">纳木措</a>直抵机场，节奏循序渐进。</p>
     <div class="routemap reveal">
+      <div class="mapframe">
       <svg viewBox="0 0 1000 700" role="img" aria-label="西藏环线路线示意图：杭州、成都飞林芝，经拉萨、日喀则、藏北环线，最后经纳木措到贡嘎机场">
         <defs>
           <path id="plane" d="M0,-7.5 C0.9,-7.5 1.5,-5.8 1.5,-4 L1.6,-1.6 L7,1 L7,2.4 L1.5,1.4 L1.2,4.6 L3,6.4 L3,7.6 L0,6.8 L-3,7.6 L-3,6.4 L-1.2,4.6 L-1.5,1.4 L-7,2.4 L-7,1 L-1.6,-1.6 L-1.5,-4 C-1.5,-5.8 -0.9,-7.5 0,-7.5 Z"/>
