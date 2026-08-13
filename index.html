@@ -119,15 +119,33 @@
   .tip b{color:var(--maroon)}
 
   /* ---------- days ---------- */
-  .day{position:relative;z-index:1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;margin-bottom:26px;box-shadow:0 2px 12px rgba(93,74,42,.07)}
+  .day{position:relative;z-index:1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;box-shadow:0 2px 12px rgba(93,74,42,.07)}
   .day.now{animation:nowpulse 1.5s ease-in-out 3}
   @keyframes nowpulse{0%,100%{box-shadow:0 2px 12px rgba(93,74,42,.07)}50%{box-shadow:0 0 0 3px rgba(201,151,44,.4),0 6px 22px rgba(201,151,44,.28)}}
   .timeline{position:relative}
-  .timeline::before{content:"";position:absolute;left:-1px;top:14px;bottom:14px;width:2px;border-radius:2px;background:linear-gradient(180deg,transparent 0%,var(--flag-blue) 5%,var(--teal) 35%,var(--gold) 62%,var(--flag-red) 93%,transparent 100%);opacity:.35}
-  .timeline::after{content:"";position:absolute;left:-1px;top:14px;bottom:14px;width:2px;border-radius:2px;background:repeating-linear-gradient(180deg,transparent 0 9px,rgba(24,168,94,.68) 9px 18px);animation:tlflow 1.1s linear infinite}
-  @keyframes tlflow{to{background-position:0 18px}}
+  /* ---- leg: 两天之间的转场连接线(飞行 / 车行 / 驻留) ---- */
+  .leg{position:relative;height:52px}
+  .leg::before{content:"";position:absolute;left:-1px;top:0;bottom:0;width:2px;border-radius:2px;background:#1fc06c;opacity:.30}
+  .leg::after{content:"";position:absolute;left:-1px;top:0;bottom:0;width:2px;border-radius:2px;background:repeating-linear-gradient(180deg,transparent 0 8px,var(--flowc,rgba(31,192,108,.78)) 8px 16px);animation:legflow 1.05s linear infinite}
+  @keyframes legflow{to{background-position:0 16px}}
+  .leg .veh{position:absolute;left:-10px;top:-24%;width:20px;height:20px;display:block;pointer-events:none;filter:drop-shadow(0 1px 2px rgba(20,26,40,.3));opacity:0}
+  .leg .veh svg{display:block;width:100%;height:100%}
+  .leg.flight{height:66px;--flowc:rgba(142,196,255,.95)}
+  .leg.flight::before{background:#4a90e2;opacity:.34}
+  .leg.flight::after{animation-duration:.8s}
+  .leg.flight .veh{animation:legfly 3.4s cubic-bezier(.45,.05,.55,.95) infinite}
+  .leg.suv .veh{animation:legdrive 1.8s linear infinite}
+  .leg.mpv{height:58px}
+  .leg.mpv .veh{animation:legdrive 3.1s linear infinite}
+  .leg.mpv .veh svg{animation:legbump .5s linear infinite}
+  @keyframes legfly{0%{top:-24%;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:104%;opacity:0}}
+  @keyframes legdrive{0%{top:-24%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:104%;opacity:0}}
+  @keyframes legbump{0%,100%{transform:translate(0,0) rotate(0)}22%{transform:translate(.7px,-.6px) rotate(2.4deg)}48%{transform:translate(-.6px,.4px) rotate(-2.4deg)}74%{transform:translate(.5px,.5px) rotate(1.3deg)}}
+  .leg.stay{height:30px;--flowc:rgba(201,151,44,.6)}
+  .leg.stay::before{background:var(--gold);opacity:.4}
+  .leg.stay::after{animation-duration:1.9s}
   .day.fold > *:not(.day-head){display:none}
-  .day.fold{padding:11px 18px 11px 20px;margin-bottom:14px;background:rgba(255,255,255,.66);box-shadow:0 1px 6px rgba(93,74,42,.05);cursor:pointer;transition:background .25s ease,box-shadow .25s ease}
+  .day.fold{padding:11px 18px 11px 20px;margin-bottom:0;background:rgba(255,255,255,.66);box-shadow:0 1px 6px rgba(93,74,42,.05);cursor:pointer;transition:background .25s ease,box-shadow .25s ease}
   .day.fold .day-head{margin-bottom:0}
   .day.fold .day-head h3{display:none}
   .day.fold:hover{background:#fff;box-shadow:0 4px 14px rgba(93,74,42,.10)}
@@ -135,16 +153,17 @@
   .tgl:hover{color:var(--maroon)}
   .tgl svg{width:15px;height:10px;transition:transform .25s ease}
   .day:not(.fold) .tgl svg{transform:rotate(180deg)}
-  .timeline.poker::before,.timeline.poker::after{display:none}
+  .timeline.poker .leg{display:none}
+  .timeline.poker .day:not(.fold){margin-bottom:18px}
   .timeline.poker .day.fold{padding:13px 18px;margin-bottom:-14px;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(93,74,42,.10);transition:transform .2s ease,box-shadow .2s ease}
   .timeline.poker .day.fold:last-child{margin-bottom:0}
   .timeline.poker .day.fold .day-badge{display:none}
   .timeline.poker .day.fold .day-head h3{order:1;display:block;width:auto;font-size:15px;letter-spacing:.04em}
-  .timeline.poker .day.fold:nth-child(odd){transform:rotate(.4deg)}
-  .timeline.poker .day.fold:nth-child(even){transform:rotate(-.4deg)}
+  .timeline.poker .day.fold:nth-of-type(odd){transform:rotate(.4deg)}
+  .timeline.poker .day.fold:nth-of-type(even){transform:rotate(-.4deg)}
   .timeline.poker .day.fold:hover{transform:none;z-index:6;box-shadow:0 10px 24px rgba(93,74,42,.18)}
   @media (max-width:640px){.timeline.poker .day.fold{margin-bottom:-10px}.timeline.poker .day.fold .day-head h3{font-size:13px}}
-  @media (prefers-reduced-motion:reduce){.timeline::after{animation:none}.day.now{animation:none}}
+  @media (prefers-reduced-motion:reduce){.leg::after{animation:none}.leg .veh{animation:none;top:36%;opacity:1}.leg.mpv .veh svg{animation:none}.day.now{animation:none}}
   .day-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
   .day-badge{background:var(--maroon);color:#ffe9c2;font-size:12px;letter-spacing:.22em;font-weight:700;border-radius:6px;padding:4px 10px}
   .day-date{font-size:13px;color:var(--muted);letter-spacing:.1em}
@@ -200,6 +219,10 @@
   @media (max-width:640px){
     .day{padding:20px 16px}
     .day-head h3{font-size:15px;letter-spacing:0;text-wrap:balance}
+    .leg{height:46px}
+    .leg.flight{height:58px}
+    .leg.mpv{height:52px}
+    .leg.stay{height:26px}
     .row .lb{flex-basis:60px}
     figure.two{grid-template-columns:1fr}
     figure.two .cell + .cell img{border-left:none;border-top:1px solid var(--line)}
@@ -250,6 +273,19 @@
       <svg viewBox="0 0 1000 700" role="img" aria-label="西藏环线路线示意图：杭州、成都飞林芝，经拉萨、日喀则、藏北环线，最后经纳木措到贡嘎机场">
         <defs>
           <path id="plane" d="M0,-7.5 C0.9,-7.5 1.5,-5.8 1.5,-4 L1.6,-1.6 L7,1 L7,2.4 L1.5,1.4 L1.2,4.6 L3,6.4 L3,7.6 L0,6.8 L-3,7.6 L-3,6.4 L-1.2,4.6 L-1.5,1.4 L-7,2.4 L-7,1 L-1.6,-1.6 L-1.5,-4 C-1.5,-5.8 -0.9,-7.5 0,-7.5 Z"/>
+          <g id="suv">
+            <rect x="6.4" y="1.4" width="11.2" height="21.2" rx="5" fill="#1fc06c" stroke="#0d1622" stroke-width=".8"/>
+            <rect x="8.1" y="4.6" width="7.8" height="4.4" rx="1.6" fill="#bff0d6"/>
+            <rect x="8.1" y="14.6" width="7.8" height="3.6" rx="1.5" fill="#e9fbf1"/>
+            <path d="M6.4 11.6H4.9M17.6 11.6h1.5" stroke="#0d1622" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+          </g>
+          <g id="mpv">
+            <rect x="6" y="1" width="12" height="22" rx="5.8" fill="#54627a" stroke="#0d1622" stroke-width=".8"/>
+            <rect x="7.8" y="3.6" width="8.4" height="3.4" rx="1.4" fill="#aebdd2"/>
+            <rect x="7.8" y="8.6" width="8.4" height="5.6" rx="1.8" fill="#7d8fa9"/>
+            <rect x="7.8" y="16" width="8.4" height="3.2" rx="1.4" fill="#dfe9f6"/>
+            <path d="M6 12.6H4.6M18 12.6h1.4" stroke="#0d1622" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+          </g>
           <radialGradient id="mapbg" cx="42%" cy="42%" r="80%">
             <stop offset="0%" stop-color="#16273a"/>
             <stop offset="100%" stop-color="#0c141f"/>
@@ -378,6 +414,8 @@
       </div>
     </article>
 
+    <div class="leg flight" aria-hidden="true"><span class="veh"><svg viewBox="-9 -9 18 18"><use href="#plane" fill="#4a90e2" stroke="#fffdf7" stroke-width="1" paint-order="stroke" transform="rotate(180)"/></svg></span></div>
+
     <!-- DAY 2 -->
     <article class="day reveal">
       <div class="day-head"><span class="day-badge">DAY 2</span><span class="day-date">9/27 · 一</span><h3 class="serif">成都 – 林芝 · 雅鲁藏布江峡谷 · 南迦巴瓦峰</h3></div>
@@ -400,6 +438,8 @@
       </div>
     </article>
 
+    <div class="leg suv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#suv"/></svg></span></div>
+
     <!-- DAY 3 -->
     <article class="day reveal">
       <div class="day-head"><span class="day-badge">DAY 3</span><span class="day-date">9/28 · 二</span><h3 class="serif">索松 – 拉萨 · 大昭寺 · 八廓街</h3></div>
@@ -412,6 +452,8 @@
         <div class="row"><span class="lb">注意</span><div class="val">适应海拔、买零食放车上，<b>到<a class="map" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=91.171924,29.653491&name=拉萨&callnative=0&src=uriapi&coordinate=gaode">拉萨</a>还车</b>；<a class="map" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=91.131155,29.650380&name=大昭寺&callnative=0&src=uriapi&coordinate=gaode">大昭寺</a>提前预约</div></div>
       </div>
     </article>
+
+    <div class="leg stay" aria-hidden="true"></div>
 
     <!-- DAY 4 -->
     <article class="day reveal">
@@ -427,6 +469,8 @@
         <div class="row"><span class="lb">用餐</span><div class="val">藏面 / 甜茶</div></div>
       </div>
     </article>
+
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv"/></svg></span></div>
 
     <!-- DAY 5 -->
     <article class="day reveal">
@@ -448,6 +492,8 @@
       </div>
     </article>
 
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv"/></svg></span></div>
+
     <!-- DAY 6 -->
     <article class="day reveal">
       <div class="day-head"><span class="day-badge">DAY 6</span><span class="day-date">10/1 · 五</span><h3 class="serif">日喀则 – 扎什伦布寺 – 班戈</h3></div>
@@ -460,6 +506,8 @@
         <div class="row"><span class="lb">注意</span><div class="val">全程第一晚高海拔——<span class="hl">当晚不洗澡、不喝酒、早睡、备好氧气</span></div></div>
       </div>
     </article>
+
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv"/></svg></span></div>
 
     <!-- DAY 7 -->
     <article class="day reveal">
@@ -479,6 +527,8 @@
       </div>
     </article>
 
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv"/></svg></span></div>
+
     <!-- DAY 8 -->
     <article class="day reveal">
       <div class="day-head"><span class="day-badge">DAY 8</span><span class="day-date">10/3 · 日</span><h3 class="serif">当雄 – 纳木措 – 贡嘎机场 – 成都</h3></div>
@@ -491,6 +541,8 @@
         <div class="row"><span class="lb">住宿</span><div class="val">成都 1 晚(洛大)· <a class="map hotel" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=103.949813,30.595860&name=天府四季酒店(成都双流机场店)&callnative=0&src=uriapi&coordinate=gaode">天府四季</a> ¥130(飞猪)</div></div>
       </div>
     </article>
+
+    <div class="leg flight" aria-hidden="true"><span class="veh"><svg viewBox="-9 -9 18 18"><use href="#plane" fill="#4a90e2" stroke="#fffdf7" stroke-width="1" paint-order="stroke" transform="rotate(180)"/></svg></span></div>
 
     <!-- DAY 9 -->
     <article class="day reveal">
