@@ -718,5 +718,14 @@
   document.addEventListener('dblclick', function(e){ if(!inRoute(e.target)) e.preventDefault(); });
 })();
 </script>
+<script>
+(function(){
+  var chs = document.querySelectorAll('.plnote .ch'); if (!chs.length) return;
+  var dl = [600,1000,1400,1800,2200,2600,3000,3400,3800,4200];
+  for (var i = 0; i < chs.length && i < dl.length; i++) {
+    (function(el, t){ setTimeout(function(){ el.style.opacity = 1; }, t); })(chs[i], dl[i]);
+  }
+})();
+</script>
 </body>
 </html>
