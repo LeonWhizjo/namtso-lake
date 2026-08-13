@@ -87,8 +87,27 @@
   @keyframes flightflow{to{stroke-dashoffset:-60}}
   @media (prefers-reduced-motion:reduce){.routemap .drive-flow,.routemap .flight-flow{animation:none;stroke-dashoffset:0}.routemap .plnote .ch{animation:none;opacity:1}.routemap .plnote .caret{animation:none;opacity:1;transform:translate(42.6px,14px)}.routemap .plnote .sun,.routemap .plnote .rays{animation:none}}
   .routemap .plnote text{font-size:8.2px;font-weight:600;fill:#ffe9c2;letter-spacing:.04em}
-  .routemap .plnote .ch{opacity:0;animation:chin .01s steps(1,end) forwards}
-  @keyframes chin{to{opacity:1}}
+  .routemap .plnote .ch{opacity:0;animation-duration:5s;animation-timing-function:steps(1,end);animation-fill-mode:forwards}
+  .routemap .plnote .l1 .ch:nth-child(1){animation-name:k1}
+  .routemap .plnote .l1 .ch:nth-child(2){animation-name:k2}
+  .routemap .plnote .l1 .ch:nth-child(3){animation-name:k3}
+  .routemap .plnote .l1 .ch:nth-child(4){animation-name:k4}
+  .routemap .plnote .l1 .ch:nth-child(5){animation-name:k5}
+  .routemap .plnote .l2 .ch:nth-child(1){animation-name:k6}
+  .routemap .plnote .l2 .ch:nth-child(2){animation-name:k7}
+  .routemap .plnote .l2 .ch:nth-child(3){animation-name:k8}
+  .routemap .plnote .l2 .ch:nth-child(4){animation-name:k9}
+  .routemap .plnote .l2 .ch:nth-child(5){animation-name:k10}
+  @keyframes k1{0%{opacity:0}12%,100%{opacity:1}}
+  @keyframes k2{0%{opacity:0}20%,100%{opacity:1}}
+  @keyframes k3{0%{opacity:0}28%,100%{opacity:1}}
+  @keyframes k4{0%{opacity:0}36%,100%{opacity:1}}
+  @keyframes k5{0%{opacity:0}44%,100%{opacity:1}}
+  @keyframes k6{0%{opacity:0}52%,100%{opacity:1}}
+  @keyframes k7{0%{opacity:0}60%,100%{opacity:1}}
+  @keyframes k8{0%{opacity:0}68%,100%{opacity:1}}
+  @keyframes k9{0%{opacity:0}76%,100%{opacity:1}}
+  @keyframes k10{0%{opacity:0}84%,100%{opacity:1}}
   .routemap .plnote .caret{fill:#ffe9c2;animation:caretpos 5s steps(1,end) both,caretblink .9s steps(1,end) infinite}
   @keyframes caretpos{0%{transform:translate(0,0)}12%{transform:translate(8.5px,0)}20%{transform:translate(17.1px,0)}28%{transform:translate(25.6px,0)}36%{transform:translate(34.1px,0)}44%{transform:translate(42.6px,0)}52%{transform:translate(8.5px,14px)}60%{transform:translate(17.1px,14px)}68%{transform:translate(25.6px,14px)}76%{transform:translate(34.1px,14px)}84%,100%{transform:translate(42.6px,14px)}}
   @keyframes caretblink{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
@@ -381,7 +400,7 @@
         <path class="flight-flow" d="M872,318 Q700,330 532,417"/>
         <g class="plg" transform="translate(701 349) rotate(254)"><use class="pl" href="#plane"/></g>
         <circle class="plwin" cx="697.9" cy="350.8" r="1.3"/>
-        <g class="plnote"><line x1="630" y1="330" x2="697.9" y2="350.8" stroke="#c9972c" stroke-width="1" stroke-dasharray="2 3" opacity=".85"/><g transform="translate(-36 0)"><rect x="560" y="292" width="118" height="38" rx="7" fill="rgba(10,18,30,.66)" stroke="rgba(201,151,44,.6)" stroke-width="1"/><g class="mtr"><g class="sun"><circle class="rays" cx="584" cy="310" r="8.5" fill="url(#sunglow)"/><circle cx="584" cy="310" r="4.4" fill="#ffd98a"/></g><path d="M568.5,326 577,303.5 585.5,326Z" fill="#5d7492"/><path d="M578.5,326 584.5,311 590.5,326Z" fill="#6c88a8"/><path d="M574.3,310.6 577,303.5 579.7,310.6 578.3,309.5 577,310.8 575.6,309.5Z" fill="#fffdf7"/><path d="M582.4,316.2 584.5,311 586.6,316.2 585.5,315.3 584.5,316.4 583.4,315.3Z" fill="#fffdf7"/><path d="M567.5,326.5h24" stroke="rgba(201,151,44,.55)" stroke-width="1" stroke-linecap="round"/></g><g class="tw"><text class="l1" x="633" y="307.5" text-anchor="middle"><tspan class="ch" style="animation-delay:.6s">进</tspan><tspan class="ch" style="animation-delay:1s">藏</tspan><tspan class="ch" style="animation-delay:1.4s">坐</tspan><tspan class="ch" style="animation-delay:1.8s">左</tspan><tspan class="ch" style="animation-delay:2.2s">侧</tspan></text><text class="l2" x="633" y="321.5" text-anchor="middle"><tspan class="ch" style="animation-delay:2.6s">赏</tspan><tspan class="ch" style="animation-delay:3s">雪</tspan><tspan class="ch" style="animation-delay:3.4s">山</tspan><tspan class="ch" style="animation-delay:3.8s">风</tspan><tspan class="ch" style="animation-delay:4.2s">光</tspan></text><rect class="caret" x="611.7" y="299" width="1.3" height="9.5"/></g></g></g>
+        <g class="plnote"><line x1="630" y1="330" x2="697.9" y2="350.8" stroke="#c9972c" stroke-width="1" stroke-dasharray="2 3" opacity=".85"/><g transform="translate(-36 0)"><rect x="560" y="292" width="118" height="38" rx="7" fill="rgba(10,18,30,.66)" stroke="rgba(201,151,44,.6)" stroke-width="1"/><g class="mtr"><g class="sun"><circle class="rays" cx="584" cy="310" r="8.5" fill="url(#sunglow)"/><circle cx="584" cy="310" r="4.4" fill="#ffd98a"/></g><path d="M568.5,326 577,303.5 585.5,326Z" fill="#5d7492"/><path d="M578.5,326 584.5,311 590.5,326Z" fill="#6c88a8"/><path d="M574.3,310.6 577,303.5 579.7,310.6 578.3,309.5 577,310.8 575.6,309.5Z" fill="#fffdf7"/><path d="M582.4,316.2 584.5,311 586.6,316.2 585.5,315.3 584.5,316.4 583.4,315.3Z" fill="#fffdf7"/><path d="M567.5,326.5h24" stroke="rgba(201,151,44,.55)" stroke-width="1" stroke-linecap="round"/></g><g class="tw"><text class="l1" x="633" y="307.5" text-anchor="middle"><tspan class="ch">进</tspan><tspan class="ch">藏</tspan><tspan class="ch">坐</tspan><tspan class="ch">左</tspan><tspan class="ch">侧</tspan></text><text class="l2" x="633" y="321.5" text-anchor="middle"><tspan class="ch">赏</tspan><tspan class="ch">雪</tspan><tspan class="ch">山</tspan><tspan class="ch">风</tspan><tspan class="ch">光</tspan></text><rect class="caret" x="611.7" y="299" width="1.3" height="9.5"/></g></g></g>
         <path class="flight" d="M285,447 Q600,560 872,330"/>
         <path class="flight-flow" d="M285,447 Q600,560 872,330"/>
         <g class="plg" transform="translate(589 474) rotate(78)"><use class="pl" href="#plane"/></g>
