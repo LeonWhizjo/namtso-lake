@@ -177,10 +177,10 @@
   .leg.suv .veh{animation:legdrive 1.8s linear infinite}
   .leg.mpv{height:58px}
   .leg.mpv .veh{animation:legdrive 3.1s linear infinite}
-  .leg.mpv .veh svg{animation:legbump .5s linear infinite}
+  .leg.mpv .veh svg{animation:legbump 4.8s linear infinite}
   @keyframes legfly{0%{top:-24%;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:104%;opacity:0}}
   @keyframes legdrive{0%{top:-24%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:104%;opacity:0}}
-  @keyframes legbump{0%,100%{transform:translate(0,0) rotate(0)}22%{transform:translate(.7px,-.6px) rotate(2.4deg)}48%{transform:translate(-.6px,.4px) rotate(-2.4deg)}74%{transform:translate(.5px,.5px) rotate(1.3deg)}}
+  @keyframes legbump{0%,55%,82%,100%{transform:translate(0,0) rotate(0)}59%{transform:translate(.5px,-.4px) rotate(1.4deg)}63%{transform:translate(-.4px,.3px) rotate(-1.2deg)}67%{transform:translate(.4px,-.3px) rotate(1deg)}71%{transform:translate(-.3px,.2px) rotate(-.8deg)}76%{transform:translate(.2px,-.15px) rotate(.5deg)}}
   .leg.stay{height:46px;--flowc:rgba(201,151,44,.6)}
   .leg.stay::before{background:var(--gold);opacity:.4}
   .leg.stay::after{animation-duration:1.9s}
@@ -330,25 +330,30 @@
         <defs>
           <path id="plane" d="M0,-7.5 C0.9,-7.5 1.5,-5.8 1.5,-4 L1.6,-1.6 L7,1 L7,2.4 L1.5,1.4 L1.2,4.6 L3,6.4 L3,7.6 L0,6.8 L-3,7.6 L-3,6.4 L-1.2,4.6 L-1.5,1.4 L-7,2.4 L-7,1 L-1.6,-1.6 L-1.5,-4 C-1.5,-5.8 -0.9,-7.5 0,-7.5 Z"/>
           <g id="suv">
-            <path d="M2.8 15V11.6Q2.8 10.2 4.2 9.9L6.8 9.4L9.2 6.8Q9.8 6.1 10.8 6.1H15.8Q16.8 6.1 17.4 6.9L19.4 9.5L21.2 10Q22.2 10.3 22.2 11.4V15H19.9A2.6 2.6 0 0 0 14.7 15H9.9A2.6 2.6 0 0 0 4.7 15Z" fill="#1fc06c" stroke="#0d1622" stroke-width=".8" stroke-linejoin="round"/>
-            <path d="M10.3 6.9H15.9Q16.7 6.9 17.2 7.6L18.5 9.4H8.9L10 7.3Q10.1 6.9 10.3 6.9Z" fill="#e9fbf1"/>
-            <path d="M13.4 6.9V14" stroke="#0e7a41" stroke-width=".6" fill="none"/>
-            <path d="M10.6 5.6H16" stroke="#0e7a41" stroke-width="1" stroke-linecap="round" fill="none"/>
-            <circle cx="7.3" cy="15" r="2" fill="#182430"/><circle cx="7.3" cy="15" r=".8" fill="#8fa3bd"/>
-            <circle cx="17.3" cy="15" r="2" fill="#182430"/><circle cx="17.3" cy="15" r=".8" fill="#8fa3bd"/>
-            <circle cx="21.6" cy="11.3" r=".6" fill="#ffe9a3"/>
-            <circle cx="3.4" cy="11.3" r=".55" fill="#d4483a"/>
+            <path d="M3 15.6V13.2Q3 12.6 3.8 12.4Q5.2 12 6 11.3Q7.6 10.15 9.6 10L12.4 9.95Q13.6 9.95 14.5 10.8L15.8 12.4Q16.6 12.55 17.6 12.62L21.3 12.85Q22.2 12.95 22.2 13.7V15.6H19.8A2.2 2.2 0 0 0 15.4 15.6H9.2A2.2 2.2 0 0 0 4.8 15.6Z" fill="#a13227" stroke="#0d1622" stroke-width=".55" stroke-linejoin="round"/>
+            <path d="M6.4 12.2Q7.8 10.5 9.8 10.35L12.3 10.3Q13.4 10.3 14.1 11L15 12.15Q10.6 12.5 6.4 12.2Z" fill="#f4e3cf"/>
+            <path d="M11.5 10.35V12.35" stroke="#6d1f18" stroke-width=".4" fill="none"/>
+            <path d="M15.2 12.2l1.1-.4.25.85Z" fill="#6d1f18"/>
+            <path d="M12 12.5V15" stroke="#6d1f18" stroke-width=".35" opacity=".5" fill="none"/>
+            <path d="M4.6 13.5Q12 13.1 20.8 13.4" stroke="#6d1f18" stroke-width=".4" opacity=".5" fill="none"/>
+            <path d="M10.6 12.9h1.2M14.3 13h1.2" stroke="#6d1f18" stroke-width=".45" stroke-linecap="round" fill="none"/>
+            <path d="M20.6 12.9L22 13.3" stroke="#ffe9a3" stroke-width=".55" stroke-linecap="round" fill="none"/>
+            <path d="M3.15 12.8V13.7" stroke="#d4483a" stroke-width=".6" stroke-linecap="round" fill="none"/>
+            <circle cx="7" cy="15.3" r="1.7" fill="#141c26"/><circle cx="7" cy="15.3" r="1" fill="#2a3648" stroke="#9db0c8" stroke-width=".4"/><circle cx="7" cy="15.3" r=".3" fill="#cfd9e6"/>
+            <circle cx="17.6" cy="15.3" r="1.7" fill="#141c26"/><circle cx="17.6" cy="15.3" r="1" fill="#2a3648" stroke="#9db0c8" stroke-width=".4"/><circle cx="17.6" cy="15.3" r=".3" fill="#cfd9e6"/>
           </g>
           <g id="mpv">
-            <path d="M2.6 15V10.8Q2.6 9.6 3.8 9.3L5.6 8.9L7.6 6.2Q8.2 5.4 9.3 5.4H17.6Q18.7 5.4 19.3 6.3L20.8 8.9L21.4 9.1Q22.4 9.4 22.4 10.6V15H19.9A2.6 2.6 0 0 0 14.7 15H9.9A2.6 2.6 0 0 0 4.7 15Z" fill="#54627a" stroke="#0d1622" stroke-width=".8" stroke-linejoin="round"/>
-            <path d="M8.5 6.2H17.4Q18.2 6.2 18.6 6.9L19.7 8.9H6.9Z" fill="#dfe9f6"/>
-            <path d="M11.6 6.2V8.9M14.8 6.2V8.9" stroke="#3c4a5f" stroke-width=".6" fill="none"/>
-            <path d="M11.8 4.9H14.6" stroke="#3c4a5f" stroke-width="1" stroke-linecap="round" fill="none"/>
-            <path d="M11.6 8.9V14" stroke="#3c4a5f" stroke-width=".6" fill="none"/>
-            <circle cx="7.3" cy="15" r="2" fill="#182430"/><circle cx="7.3" cy="15" r=".8" fill="#8fa3bd"/>
-            <circle cx="17.3" cy="15" r="2" fill="#182430"/><circle cx="17.3" cy="15" r=".8" fill="#8fa3bd"/>
-            <circle cx="21.8" cy="11" r=".6" fill="#ffe9a3"/>
-            <circle cx="3.2" cy="11" r=".55" fill="#d4483a"/>
+            <path d="M3.1 15.6V13.1Q3.1 12.45 3.8 12.25Q4.35 12.05 4.9 11.75Q7.6 10.3 10.6 9.8Q13.9 9.55 16.6 10.9Q18.9 12 20.6 12.9Q21.9 13.35 22.1 14.1V15.6H20.2A2.2 2.2 0 0 0 15.8 15.6H9A2.2 2.2 0 0 0 4.6 15.6Z" fill="#f8fafc" stroke="#0d1622" stroke-width=".55" stroke-linejoin="round"/>
+            <path d="M16 10.85Q16.6 10.45 17.2 10.9Z" fill="#26313f"/>
+            <path d="M19.9 12.85Q18.2 11.9 16.3 10.95Q13.8 9.95 10.8 10.15Q7.9 10.6 5.5 11.9L5 12.2Q11.5 13 19.9 12.85Z" fill="#26313f"/>
+            <path d="M12.6 10.2V12.85" stroke="#f8fafc" stroke-width=".4" opacity=".8" fill="none"/>
+            <path d="M19.2 12.55l1-.35.2.8Z" fill="#26313f"/>
+            <path d="M4.8 13.8Q12 13.4 20.4 13.7" stroke="#c7d0dc" stroke-width=".4" opacity=".8" fill="none"/>
+            <path d="M10.8 13h1.3M15.2 13.05h1.3" stroke="#b9c4d2" stroke-width=".45" stroke-linecap="round" fill="none"/>
+            <path d="M20.6 13.3L21.9 13.7" stroke="#ffe9a3" stroke-width=".55" stroke-linecap="round" fill="none"/>
+            <path d="M3.25 12.7V13.6" stroke="#d4483a" stroke-width=".6" stroke-linecap="round" fill="none"/>
+            <circle cx="6.8" cy="15.3" r="1.7" fill="#141c26"/><circle cx="6.8" cy="15.3" r="1" fill="#2a3648" stroke="#9db0c8" stroke-width=".4"/><circle cx="6.8" cy="15.3" r=".3" fill="#cfd9e6"/>
+            <circle cx="18" cy="15.3" r="1.7" fill="#141c26"/><circle cx="18" cy="15.3" r="1" fill="#2a3648" stroke="#9db0c8" stroke-width=".4"/><circle cx="18" cy="15.3" r=".3" fill="#cfd9e6"/>
           </g>
           <g id="walker">
             <rect x="9.3" y="7.5" width="2.9" height="4.7" rx="1.2" fill="#c9972c"/>
