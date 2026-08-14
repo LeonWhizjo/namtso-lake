@@ -182,11 +182,11 @@
   .leg.mpv .veh svg{animation:legbump 4.8s linear infinite}
   @keyframes legfly{0%{top:-24%;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:104%;opacity:0}}
   @keyframes legdrive{0%{top:-24%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:104%;opacity:0}}
-  @keyframes legbump{0%,55%,84%,100%{transform:translate(0,0) rotate(0)}59%{transform:translate(.5px,-.4px) rotate(1.4deg)}63%{transform:translate(-.4px,.3px) rotate(-1.2deg)}67%{transform:translate(.4px,-.3px) rotate(1deg)}71%{transform:translate(-.3px,.2px) rotate(-.8deg)}76%{transform:translate(.25px,-.2px) rotate(.6deg)}80%{transform:translate(-.2px,.15px) rotate(-.5deg)}}
+  @keyframes legbump{0%,55%,92%,100%{transform:translate(0,0) rotate(0)}59%{transform:translate(.5px,-.4px) rotate(1.4deg)}63%{transform:translate(-.4px,.3px) rotate(-1.2deg)}67%{transform:translate(.4px,-.3px) rotate(1deg)}71%{transform:translate(-.3px,.2px) rotate(-.8deg)}76%{transform:translate(.25px,-.2px) rotate(.6deg)}80%{transform:translate(-.2px,.15px) rotate(-.5deg)}84%{transform:translate(.15px,-.1px) rotate(.4deg)}88%{transform:translate(-.1px,.08px) rotate(-.3deg)}}
   .leg.stay{height:46px;--flowc:rgba(201,151,44,.6)}
   .leg.stay::before{background:var(--gold);opacity:.4}
   .leg.stay::after{animation-duration:1.9s}
-  .leg.suv .veh,.leg.mpv .veh{left:-17px;width:24px;height:24px}
+  .leg.suv .veh,.leg.mpv .veh{left:-25px;width:32px;height:32px}
   .leg.stay .veh{animation:legpace 7s ease-in-out infinite}
   .leg.stay .veh svg{animation:pacestep 7s linear infinite;transform-box:fill-box;transform-origin:center}
   @keyframes legpace{0%{top:-16%;left:-15px;opacity:0}6%{top:-16%;opacity:1}28%{top:72%}32%{left:-15px}38%{left:-6px}40%{top:72%}62%{top:-16%}66%{left:-6px}72%{left:-15px}74%{top:-16%}94%{top:72%;opacity:1}100%{top:72%;left:-15px;opacity:0}}
@@ -271,7 +271,7 @@
     .leg.flight{height:58px}
     .leg.mpv{height:52px}
     .leg.stay{height:40px}
-    .leg.suv .veh,.leg.mpv .veh{left:-13px;width:19px;height:19px}
+    .leg.suv .veh,.leg.mpv .veh{left:-19px;width:24px;height:24px}
     .leg.stay .veh{width:16px;height:16px;animation-name:legpaceM}
     @keyframes legpaceM{0%{top:-16%;left:-13px;opacity:0}6%{top:-16%;opacity:1}28%{top:72%}32%{left:-13px}38%{left:-4px}40%{top:72%}62%{top:-16%}66%{left:-4px}72%{left:-13px}74%{top:-16%}94%{top:72%;opacity:1}100%{top:72%;left:-13px;opacity:0}}
     .row .lb{flex-basis:60px}
@@ -332,15 +332,17 @@
         <defs>
           <path id="plane" d="M0,-7.5 C0.9,-7.5 1.5,-5.8 1.5,-4 L1.6,-1.6 L7,1 L7,2.4 L1.5,1.4 L1.2,4.6 L3,6.4 L3,7.6 L0,6.8 L-3,7.6 L-3,6.4 L-1.2,4.6 L-1.5,1.4 L-7,2.4 L-7,1 L-1.6,-1.6 L-1.5,-4 C-1.5,-5.8 -0.9,-7.5 0,-7.5 Z"/>
           <g id="suv">
-            <path d="M3 15.6V13.2Q3 12.6 3.8 12.4Q5.2 12 6 11.3Q7.6 10.15 9.6 10L12.4 9.95Q13.6 9.95 14.5 10.8L15.8 12.4Q16.6 12.15 17.6 12.1L21.2 12.2Q22.2 12.3 22.2 13.1V15.6H19.8A2.2 2.2 0 0 0 15.4 15.6H9.2A2.2 2.2 0 0 0 4.8 15.6Z" fill="#a13227" stroke="#0d1622" stroke-width=".55" stroke-linejoin="round"/>
-            <path d="M6.4 12.2Q7.8 10.5 9.8 10.35L12.3 10.3Q13.4 10.3 14.1 11L15 12.15Q10.6 12.5 6.4 12.2Z" fill="#f4e3cf"/>
-            <path d="M11.5 10.35V12.35" stroke="#6d1f18" stroke-width=".4" fill="none"/>
-            <path d="M15.2 12.2l1.1-.4.25.85Z" fill="#6d1f18"/>
-            <path d="M12 12.5V15" stroke="#6d1f18" stroke-width=".35" opacity=".5" fill="none"/>
+            <path d="M3.8 15.6L3.2 12.5Q3.1 11.3 3.9 10.7Q4.6 10.55 5.6 10.4Q7.2 10.15 8.4 10.02Q9 9.97 9.6 9.96L12.4 9.95Q13.6 9.95 14.5 10.8L15.8 12.1Q16.6 11.55 17.6 11.5L21.2 11.6Q22.2 11.7 22.2 12.5V15.6H19.8A2.2 2.2 0 0 0 15.4 15.6H9.2A2.2 2.2 0 0 0 4.8 15.6Z" fill="#a13227" stroke="#0d1622" stroke-width=".55" stroke-linejoin="round"/>
+            <path d="M6.2 11.75Q6.6 10.6 7.6 10.4Q8.6 10.3 9.8 10.28L12.3 10.3Q13.4 10.3 14.1 11L14.9 11.85Q11 12.05 6.2 11.75Z" fill="#f4e3cf"/>
+            <path d="M5.6 10.45L3.8 10.3Q3.45 10.28 3.6 10.6L3.75 10.95L5.6 10.75Z" fill="#6d1f18"/>
+            <path d="M11.5 10.35V12.2" stroke="#6d1f18" stroke-width=".4" fill="none"/>
+            <path d="M15.75 11.9L15.35 11.5" stroke="#6d1f18" stroke-width=".35" fill="none"/>
+            <rect x="14.2" y="10.75" width="1.2" height=".85" rx=".32" fill="#6d1f18"/>
+            <path d="M12 12.35V15" stroke="#6d1f18" stroke-width=".35" opacity=".5" fill="none"/>
             <path d="M4.6 13.5Q12 13.1 20.8 13.4" stroke="#6d1f18" stroke-width=".4" opacity=".5" fill="none"/>
             <path d="M10.6 12.9h1.2M14.3 13h1.2" stroke="#6d1f18" stroke-width=".45" stroke-linecap="round" fill="none"/>
-            <path d="M20.6 12.35L22 12.75" stroke="#ffe9a3" stroke-width=".55" stroke-linecap="round" fill="none"/>
-            <path d="M3.15 12.8V13.7" stroke="#d4483a" stroke-width=".6" stroke-linecap="round" fill="none"/>
+            <path d="M20.6 11.8L22 12.2" stroke="#ffe9a3" stroke-width=".55" stroke-linecap="round" fill="none"/>
+            <path d="M3.45 11.8V12.7" stroke="#d4483a" stroke-width=".6" stroke-linecap="round" fill="none"/>
             <circle cx="7" cy="15.3" r="1.7" fill="#141c26"/><circle cx="7" cy="15.3" r="1" fill="#2a3648" stroke="#9db0c8" stroke-width=".4"/><circle cx="7" cy="15.3" r=".3" fill="#cfd9e6"/>
             <circle cx="17.6" cy="15.3" r="1.7" fill="#141c26"/><circle cx="17.6" cy="15.3" r="1" fill="#2a3648" stroke="#9db0c8" stroke-width=".4"/><circle cx="17.6" cy="15.3" r=".3" fill="#cfd9e6"/>
           </g>
