@@ -184,6 +184,10 @@
   @keyframes legfly{0%{top:-24%;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:104%;opacity:0}}
   @keyframes legdrive{0%{top:-24%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:104%;opacity:0}}
   @keyframes legbump{0%,55%,92%,100%{transform:translate(0,0) rotate(0)}59%{transform:translate(.5px,-.4px) rotate(1.4deg)}63%{transform:translate(-.4px,.3px) rotate(-1.2deg)}67%{transform:translate(.4px,-.3px) rotate(1deg)}71%{transform:translate(-.3px,.2px) rotate(-.8deg)}76%{transform:translate(.25px,-.2px) rotate(.6deg)}80%{transform:translate(-.2px,.15px) rotate(-.5deg)}84%{transform:translate(.15px,-.1px) rotate(.4deg)}88%{transform:translate(-.1px,.08px) rotate(-.3deg)}}
+  .leg.mpv .dust{position:absolute;left:16px;top:4px;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle,rgba(178,140,86,.95) 0%,rgba(178,140,86,.55) 42%,rgba(178,140,86,0) 74%);opacity:0;pointer-events:none;animation:dustpuff 4.8s linear infinite}
+  .leg.mpv .dust.d2{left:17px;top:15px;width:15px;height:15px;animation-name:dustpuff2}
+  @keyframes dustpuff{0%,57%{opacity:0;transform:translate(0,0) scale(.45)}61%{opacity:.9}72%{opacity:.6;transform:translate(2px,-5px) scale(1.05)}100%{opacity:0;transform:translate(4px,-13px) scale(1.7)}}
+  @keyframes dustpuff2{0%,59%{opacity:0;transform:translate(0,0) scale(.4)}64%{opacity:.8}76%{opacity:.5;transform:translate(1.5px,-6px) scale(1.1)}100%{opacity:0;transform:translate(3px,-14px) scale(1.75)}}
   .leg.stay{height:46px;--flowc:rgba(201,151,44,.6)}
   .leg.stay::before{background:var(--gold);opacity:.4}
   .leg.stay::after{animation-duration:1.9s}
@@ -211,7 +215,7 @@
   .timeline.poker .day.fold:nth-of-type(even){transform:rotate(-.4deg)}
   .timeline.poker .day.fold:hover{transform:none;z-index:6;box-shadow:0 10px 24px rgba(93,74,42,.18)}
   @media (max-width:640px){.timeline.poker .day.fold{margin-bottom:-10px}.timeline.poker .day.fold .day-head h3{font-size:13px}}
-  @media (prefers-reduced-motion:reduce){.leg::after{animation:none}.leg .veh{animation:none;top:36%;opacity:1}.leg.mpv .veh svg{animation:none}.leg.stay .veh svg{animation:none}.day.now{animation:none}}
+  @media (prefers-reduced-motion:reduce){.leg::after{animation:none}.leg .veh{animation:none;top:36%;opacity:1}.leg.mpv .veh svg{animation:none}.leg.mpv .dust{animation:none;opacity:0}.leg.stay .veh svg{animation:none}.day.now{animation:none}}
   .day-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
   .day-badge{background:var(--maroon);color:#ffe9c2;font-size:12px;letter-spacing:.22em;font-weight:700;border-radius:6px;padding:4px 10px}
   .day-date{font-size:13px;color:var(--muted);letter-spacing:.1em}
@@ -273,6 +277,8 @@
     .leg.mpv{height:52px}
     .leg.stay{height:40px}
     .leg.suv .veh,.leg.mpv .veh{left:-19px;width:24px;height:24px}
+    .leg.mpv .dust{left:12px;top:3px;width:9px;height:9px}
+    .leg.mpv .dust.d2{left:13px;top:12px;width:11px;height:11px}
     .leg.stay .veh{width:16px;height:16px;animation-name:legpaceM}
     @keyframes legpaceM{0%{top:-16%;left:-13px;opacity:0}6%{top:-16%;opacity:1}28%{top:72%}32%{left:-13px}38%{left:-4px}40%{top:72%}62%{top:-16%}66%{left:-4px}72%{left:-13px}74%{top:-16%}94%{top:72%;opacity:1}100%{top:72%;left:-13px;opacity:0}}
     .row .lb{flex-basis:60px}
@@ -578,7 +584,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
 
     <!-- DAY 5 -->
     <article class="day reveal">
@@ -600,7 +606,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
 
     <!-- DAY 6 -->
     <article class="day reveal">
@@ -615,7 +621,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
 
     <!-- DAY 7 -->
     <article class="day reveal">
@@ -635,7 +641,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
 
     <!-- DAY 8 -->
     <article class="day reveal">
