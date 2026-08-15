@@ -184,10 +184,18 @@
   @keyframes legfly{0%{top:-24%;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:104%;opacity:0}}
   @keyframes legdrive{0%{top:-24%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:104%;opacity:0}}
   @keyframes legbump{0%,55%,92%,100%{transform:translate(0,0) rotate(0)}59%{transform:translate(.5px,-.4px) rotate(1.4deg)}63%{transform:translate(-.4px,.3px) rotate(-1.2deg)}67%{transform:translate(.4px,-.3px) rotate(1deg)}71%{transform:translate(-.3px,.2px) rotate(-.8deg)}76%{transform:translate(.25px,-.2px) rotate(.6deg)}80%{transform:translate(-.2px,.15px) rotate(-.5deg)}84%{transform:translate(.15px,-.1px) rotate(.4deg)}88%{transform:translate(-.1px,.08px) rotate(-.3deg)}}
-  .leg.mpv .dust{position:absolute;left:16px;top:4px;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle,rgba(178,140,86,.95) 0%,rgba(178,140,86,.55) 42%,rgba(178,140,86,0) 74%);opacity:0;pointer-events:none;animation:dustpuff 4.8s linear infinite}
-  .leg.mpv .dust.d2{left:17px;top:15px;width:15px;height:15px;animation-name:dustpuff2}
-  @keyframes dustpuff{0%,57%{opacity:0;transform:translate(0,0) scale(.45)}61%{opacity:.9}72%{opacity:.6;transform:translate(2px,-5px) scale(1.05)}100%{opacity:0;transform:translate(4px,-13px) scale(1.7)}}
-  @keyframes dustpuff2{0%,59%{opacity:0;transform:translate(0,0) scale(.4)}64%{opacity:.8}76%{opacity:.5;transform:translate(1.5px,-6px) scale(1.1)}100%{opacity:0;transform:translate(3px,-14px) scale(1.75)}}
+  .leg.mpv .dust{position:absolute;left:15px;top:3px;width:13px;height:12px;opacity:0;pointer-events:none;border-radius:46% 54% 62% 38%/52% 45% 55% 48%;background:radial-gradient(circle at 34% 66%,rgba(178,140,86,.9) 0 17%,rgba(178,140,86,0) 45%),radial-gradient(circle at 64% 40%,rgba(192,155,101,.8) 0 15%,rgba(192,155,101,0) 42%),radial-gradient(circle at 50% 55%,rgba(178,140,86,.85) 0 21%,rgba(178,140,86,0) 56%);animation:dustpuff 4.8s linear infinite}
+  .leg.mpv .dust.d2{left:14px;top:16px;width:15px;height:14px;border-radius:58% 42% 47% 53%/49% 57% 43% 51%;background:radial-gradient(circle at 60% 62%,rgba(178,140,86,.85) 0 16%,rgba(178,140,86,0) 44%),radial-gradient(circle at 36% 38%,rgba(192,155,101,.75) 0 14%,rgba(192,155,101,0) 40%),radial-gradient(circle at 50% 50%,rgba(178,140,86,.8) 0 20%,rgba(178,140,86,0) 55%);animation-name:dustpuff2}
+  .leg.mpv .dust.d3{left:17px;top:6px;width:11px;height:10px;border-radius:52% 48% 44% 56%/47% 55% 45% 53%;background:radial-gradient(circle at 40% 60%,rgba(178,140,86,.85) 0 15%,rgba(178,140,86,0) 43%),radial-gradient(circle at 62% 36%,rgba(192,155,101,.7) 0 13%,rgba(192,155,101,0) 40%),radial-gradient(circle at 50% 52%,rgba(178,140,86,.8) 0 19%,rgba(178,140,86,0) 52%);animation-name:dustpuff3}
+  .leg.mpv .grit{position:absolute;left:20px;top:8px;width:1.4px;height:1.4px;border-radius:60% 40% 55% 45%;background:#8a6a3f;opacity:0;pointer-events:none;animation:gritfly 4.8s linear infinite}
+  .leg.mpv .grit.g2{left:20px;top:22px;width:1.2px;height:1.2px;background:#6d5330;animation-name:gritfly2}
+  .leg.mpv .grit.g3{left:19px;top:10px;width:1.3px;height:1.3px;background:#7a5c36;animation-name:gritfly3}
+  @keyframes dustpuff{0%,57%{opacity:0;transform:translate(0,0) scale(.4) rotate(0deg)}61%{opacity:.9}72%{opacity:.6;transform:translate(-2.5px,-5px) scale(1.05) rotate(40deg)}100%{opacity:0;transform:translate(-5px,-12px) scale(1.7) rotate(85deg)}}
+  @keyframes dustpuff2{0%,59%{opacity:0;transform:translate(0,0) scale(.38) rotate(0deg)}64%{opacity:.8}76%{opacity:.5;transform:translate(-2px,-6px) scale(1.1) rotate(-35deg)}100%{opacity:0;transform:translate(-4.5px,-13px) scale(1.75) rotate(-80deg)}}
+  @keyframes dustpuff3{0%,60%{opacity:0;transform:translate(0,0) scale(.35) rotate(0deg)}64%{opacity:.85}76%{opacity:.55;transform:translate(-2px,-4px) scale(1) rotate(-30deg)}100%{opacity:0;transform:translate(-4px,-10px) scale(1.55) rotate(-70deg)}}
+  @keyframes gritfly{0%,57%{opacity:0;transform:translate(0,0)}60%{opacity:1}70%{opacity:.9;transform:translate(-3px,-4px)}82%,100%{opacity:0;transform:translate(-6px,-9px)}}
+  @keyframes gritfly2{0%,59%{opacity:0;transform:translate(0,0)}63%{opacity:1}74%{opacity:.85;transform:translate(-2.5px,-5px)}86%,100%{opacity:0;transform:translate(-5px,-10px)}}
+  @keyframes gritfly3{0%,60%{opacity:0;transform:translate(0,0)}64%{opacity:1}75%{opacity:.9;transform:translate(-2px,-5px)}88%,100%{opacity:0;transform:translate(-3.5px,-11px)}}
   .leg.stay{height:46px;--flowc:rgba(201,151,44,.6)}
   .leg.stay::before{background:var(--gold);opacity:.4}
   .leg.stay::after{animation-duration:1.9s}
@@ -215,7 +223,7 @@
   .timeline.poker .day.fold:nth-of-type(even){transform:rotate(-.4deg)}
   .timeline.poker .day.fold:hover{transform:none;z-index:6;box-shadow:0 10px 24px rgba(93,74,42,.18)}
   @media (max-width:640px){.timeline.poker .day.fold{margin-bottom:-10px}.timeline.poker .day.fold .day-head h3{font-size:13px}}
-  @media (prefers-reduced-motion:reduce){.leg::after{animation:none}.leg .veh{animation:none;top:36%;opacity:1}.leg.mpv .veh svg{animation:none}.leg.mpv .dust{animation:none;opacity:0}.leg.stay .veh svg{animation:none}.day.now{animation:none}}
+  @media (prefers-reduced-motion:reduce){.leg::after{animation:none}.leg .veh{animation:none;top:36%;opacity:1}.leg.mpv .veh svg{animation:none}.leg.mpv .dust{animation:none;opacity:0}.leg.mpv .grit{animation:none;opacity:0}.leg.stay .veh svg{animation:none}.day.now{animation:none}}
   .day-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:6px}
   .day-badge{background:var(--maroon);color:#ffe9c2;font-size:12px;letter-spacing:.22em;font-weight:700;border-radius:6px;padding:4px 10px}
   .day-date{font-size:13px;color:var(--muted);letter-spacing:.1em}
@@ -277,8 +285,12 @@
     .leg.mpv{height:52px}
     .leg.stay{height:40px}
     .leg.suv .veh,.leg.mpv .veh{left:-19px;width:24px;height:24px}
-    .leg.mpv .dust{left:12px;top:3px;width:9px;height:9px}
-    .leg.mpv .dust.d2{left:13px;top:12px;width:11px;height:11px}
+    .leg.mpv .dust{left:11px;top:2px;width:9px;height:8px}
+    .leg.mpv .dust.d2{left:11px;top:13px;width:11px;height:10px}
+    .leg.mpv .dust.d3{left:12px;top:4px;width:8px;height:7px}
+    .leg.mpv .grit{left:15px;top:6px}
+    .leg.mpv .grit.g2{left:15px;top:17px}
+    .leg.mpv .grit.g3{left:14px;top:8px}
     .leg.stay .veh{width:16px;height:16px;animation-name:legpaceM}
     @keyframes legpaceM{0%{top:-16%;left:-13px;opacity:0}6%{top:-16%;opacity:1}28%{top:72%}32%{left:-13px}38%{left:-4px}40%{top:72%}62%{top:-16%}66%{left:-4px}72%{left:-13px}74%{top:-16%}94%{top:72%;opacity:1}100%{top:72%;left:-13px;opacity:0}}
     .row .lb{flex-basis:60px}
@@ -584,7 +596,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i><i class="dust d3"></i><i class="grit"></i><i class="grit g2"></i><i class="grit g3"></i></span></div>
 
     <!-- DAY 5 -->
     <article class="day reveal">
@@ -606,7 +618,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i><i class="dust d3"></i><i class="grit"></i><i class="grit g2"></i><i class="grit g3"></i></span></div>
 
     <!-- DAY 6 -->
     <article class="day reveal">
@@ -621,7 +633,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i><i class="dust d3"></i><i class="grit"></i><i class="grit g2"></i><i class="grit g3"></i></span></div>
 
     <!-- DAY 7 -->
     <article class="day reveal">
@@ -641,7 +653,7 @@
       </div>
     </article>
 
-    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i></span></div>
+    <div class="leg mpv" aria-hidden="true"><span class="veh"><svg viewBox="0 0 24 24"><use href="#mpv" transform="translate(24 0) scale(-1 1) rotate(90 12 12)"/></svg><i class="dust"></i><i class="dust d2"></i><i class="dust d3"></i><i class="grit"></i><i class="grit g2"></i><i class="grit g3"></i></span></div>
 
     <!-- DAY 8 -->
     <article class="day reveal">
